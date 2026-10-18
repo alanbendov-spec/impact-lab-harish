@@ -1,0 +1,19 @@
+{
+  "voice": "JBFqnCBsd6RMkjVDRZzb",
+  "voice_name": "George",
+  "model": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.8,
+    "style": 0.55,
+    "speed": 1.0
+  },
+  "lines": {
+    "hook": "The world your parents knew... is gone. The way people work, earn, and make an impact — it's changing completely. And the new world has a language: English. And a tool: artificial intelligence. But here is the real question: what will YOU build with it?",
+    "cover": "Right now, somewhere, one person — alone — is building something the whole world will use. No company. No permission. Just an idea, and the right tools. This year... that person is you.",
+    "demo-harish": "A broken streetlight on Kalanit Street. You snap a photo. The A.I. knows what it is, where it is, how urgent it is. The city sees it on a live map. The neighbor gets one word back: fixed. That is a product. And someone pays for it.",
+    "demo-business": "A pizzeria in Harish. Orders flying in on WhatsApp. A bot your team built reads every order, confirms it, sends it to the kitchen. One hundred and forty-nine shekels a month. Ten shops... and it never sleeps.",
+    "demo-jewish": "A mother just gave birth. She needs meals. The A.I. writes the request, translates it to Hebrew, English, Russian — because Harish is a city of immigrants. It finds the volunteers. Love your neighbor... powered by software.",
+    "close": "I came thirteen thousand kilometers to stand in this room. The only difference between you and me... is that I already started. Today, you start. Ready to build your world?"
+  }
+}
