@@ -190,7 +190,7 @@
         html += '<div class="scene"><div class="halo"></div><div class="brand-mark reveal"><div class="brand-orbit"></div><img src="img/emblema-navy.png" alt="' + esc(C.meta.school) + '"></div>' + copyHtml(slide) + "</div>";
         break;
       case "home":
-        html += '<div class="scene"><div class="halo"></div><div class="home-shape reveal"><span class="home-roof"></span><span class="home-door"></span></div>' + copyHtml(slide, { medium: true }) + "</div>";
+        html += '<div class="scene">' + (slide.background ? "" : '<div class="halo"></div><div class="home-shape reveal"><span class="home-roof"></span><span class="home-door"></span></div>') + copyHtml(slide, { medium: true }) + "</div>";
         break;
       case "question":
         html += '<div class="scene"><div class="question-mark reveal">?</div>' + copyHtml(slide, { medium: true }) + "</div>";
@@ -274,7 +274,7 @@
         html += '<div class="scene"><div class="parallel-demo"><div class="cpu-demo reveal"><b>CPU</b><div class="cpu-line"><i></i><i></i><i></i><i></i><i></i><i></i></div><small>' + esc(L.visual.oneLine) + '</small></div><div class="gpu-demo reveal"><b>GPU</b><div class="gpu-grid">' + gpuDots() + '</div><small>' + esc(L.visual.thousandsAtOnce) + '</small></div></div>' + copyHtml(slide, { medium: true }) + "</div>";
         break;
       case "alexnet":
-        html += '<div class="scene"><div class="alexnet-visual"><div class="gpu-card reveal"><i></i><b>GTX 580</b><span>GAMING GPU</span></div><div class="gpu-card reveal"><i></i><b>GTX 580</b><span>GAMING GPU</span></div><div class="alexnet-score reveal" data-from="26.2" data-to="15.3" data-decimals="1">26.2<span>%</span><label>IMAGENET ERROR</label></div></div>' + copyHtml(slide, { medium: true }) + "</div>";
+        html += '<div class="scene"><div class="alexnet-visual"><div class="gpu-card reveal"><i></i><b>GTX 580</b><span>GAMING GPU 1</span></div><div class="gpu-card reveal"><i></i><b>GTX 580</b><span>GAMING GPU 2</span></div><div class="alexnet-score reveal" data-from="26.2" data-to="15.3" data-decimals="1">26.2<span>%</span><label>IMAGENET ERROR (CPU → 2x GPU)</label></div></div>' + copyHtml(slide, { medium: true }) + "</div>";
         break;
       case "video-question":
         html += '<div class="scene">' + videoGrid(slide.media) + '<div class="post-video">' + copyHtml(slide) + "</div></div>";

@@ -264,7 +264,15 @@ button{font:inherit}
 .slide[data-id="machine-childhood"] .media-row{height:30cqh}.slide[data-id="machine-childhood"] .headline{font-size:3.45cqw}.slide[data-id="machine-human-video"] .headline,.slide[data-id="machine-next-word"] .headline{font-size:3.05cqw;max-width:18ch}
 .slide[data-id="machine-parallel-video"] .he,.slide[data-id="machine-next-word"] .he,.slide[data-id="nisan-28-part-2"] .he{font-size:1.22cqw;max-width:38ch}
 .slide[data-id="machine-human-video"] .video,.slide[data-id="musk-reveal"] .video{aspect-ratio:16/9;height:48cqh}
-.slide[data-id="machine-revealed"] .headline{font-size:4.25cqw}.slide[data-id="october-awakening"]{background:linear-gradient(145deg,#11151d,#03060b)}.slide[data-id="october-awakening"]::before{opacity:.18}
+.slide[data-id="machine-revealed"] .headline{font-size:4.25cqw}
+.slide[data-id="october-awakening"]{background:linear-gradient(145deg,#11151d,#03060b)}
+.slide[data-id="october-awakening"]::before{opacity:.18}
+.slide[data-id="october-awakening"] .media-row{width:80cqw;height:30cqh;margin-bottom:1.2cqh}
+.slide[data-id="october-awakening"] .headline{font-size:2.85cqw;max-width:28ch}
+.slide[data-id="october-awakening"] .sub-en{font-size:1.15cqw;max-width:48ch}
+.slide[data-id="voice-nations"] .single-image{width:48cqw;height:34cqh;margin-bottom:1.2cqh}
+.slide[data-id="voice-nations"] .headline{font-size:2.9cqw;max-width:26ch}
+.slide[data-id="voice-nations"] .sub-en{font-size:1.15cqw;max-width:48ch}
 
 /* Act III visuals */
 .symbol-row,.replacement-row,.network-row{width:82cqw;display:flex;align-items:center;justify-content:center;gap:1.2cqw}

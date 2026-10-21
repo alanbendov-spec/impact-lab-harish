@@ -116,8 +116,9 @@
         en: "We were created to build G-d’s home down here",
         he: "נבראנו כדי לעשות לו יתברך דירה בתחתונים",
         tag: "TANYA · CHAPTER 36",
-        source: "Tanya, chapter 36",
-        notes: "Recordar la idea central de la clase 1: la meta ocurre aquí abajo.\nLa tecnología también pertenece al material que debemos transformar."
+        background: "img/commons/beit-hamikdash.jpg",
+        source: "Tanya, chapter 36 · Holyland Model of Jerusalem Second Temple (Wikimedia Commons)",
+        notes: "Recordar la idea central de la clase 1: la meta ocurre aquí abajo, en el mundo físico.\nEl Beit HaMikdash es la expresión física más concreta de una morada para D-os abajo (Dira BaTachtonim). La tecnología también pertenece a ese material del mundo que debemos elevar."
       },
       {
         id: "why-now", act: "0", type: "question",
@@ -331,18 +332,18 @@
       },
       {
         id: "machine-human-video", act: "M", type: "video",
-        en: "When people follow one binary rule, they form a living computer",
-        he: "כשבני אדם עוקבים אחרי כלל בינארי פשוט, הם יוצרים מחשב חי",
+        en: "A stadium of people becomes a thinking brain",
+        he: "אצטדיון של אנשים הופך למוח שחושב",
         sub: {
-          en: "A single 0 or 1 is simple. But connect thousands following logic gates (AND, OR), and complex computation emerges.",
-          es: "Un solo 0 o 1 no hace nada. Pero al conectar miles siguiendo compuertas lógicas (AND, OR), emerge el cómputo complejo.",
-          he: "0 או 1 בודד אינו אומר דבר. אך כשמחברים אלפים לפי שערים לוגיים (AND, OR), מתפרץ חישוב מורכב."
+          en: "Each person follows one simple binary switch (0 or 1). No single person knows what was drawn. But layer by layer (retina → lines → angles → IT), the stadium recognizes the number 3.",
+          es: "Nadie sabe qué número se dibujó; cada persona solo levanta su tarjeta por una regla binaria fija (0 o 1). Pero capa por capa (retina → líneas → ángulos → decisión), el estadio entero computa y reconoce el número 3.",
+          he: "אף אדם אינו יודע איזה מספר צויר; כל אחד פועל לפי מתג בינארי פשוט (0 או 1). אך שכבה אחר שכבה (רשתית ← קווים ← זוויות ← החלטה), האצטדיון כולו מעבד ומזהה את הספרה 3."
         },
         interaction: "Classroom experiment: 3 students raise/lower hands (1 or 0) to form a logic gate.",
         interactionHe: "ניסוי בכיתה: 3 תלמידים מרימים/מורידים יד (1 או 0) כדי ליצור שער לוגי",
-        media: [{ id: "W1", slug: "w1-human-computer", label: "W1 · HUMAN COMPUTER · 01:20–01:48", autoplay: true, volume: 0.6 }],
-        source: "3 Body Problem · The Human Computer · 30 million people acting as logic gates",
-        notes: "INTERACCIÓN: tres alumnos forman un número binario o compuerta AND.\nEl clip muestra qué pasa cuando esa reacción binaria se multiplica a escala: emerge un computador vivo."
+        media: [{ id: "W1", slug: "w1-human-computer", label: "W1 · VSAUCE: THE STILWELL BRAIN · 00:00–02:17", autoplay: true, volume: 0.8 }],
+        source: "Vsauce (Mind Field) · The Stilwell Brain · Excerpt for classroom analysis",
+        notes: "VSAUCE: THE STILWELL BRAIN (Michael Stevens).\n5 capas en la cancha: 1. Retina (25 píxeles) -> 2. V1 (líneas) -> 3. V2 (ángulos) -> 4. V4/IT (inhibe falsos y combina) -> 5. Decisión (Chris anuncia el resultado).\nCONCEPTO CLAVE: Ninguna neurona (ni persona) sabe qué número es. Cada uno solo sigue una regla binaria boba. La inteligencia emerge de la conexión en capas de interruptores simples."
       },
       {
         id: "machine-eniac", act: "M", type: "machine-eniac",
@@ -382,15 +383,15 @@
       },
       {
         id: "machine-alexnet", act: "M", type: "alexnet",
-        en: "2012: AlexNet shocked ImageNet on 2 gaming GPUs",
-        he: "2012: אלכסנט הדהימה את תחרות ImageNet עם 2 כרטיסי גיימינג",
+        en: "ImageNet was the world championship. AlexNet won it on 2 gaming GPUs.",
+        he: "תחרות ImageNet הייתה אליפות העולם. אלכסנט ניצחה אותה עם 2 כרטיסי גיימינג.",
         sub: {
-          en: "ImageNet was the world championship of computer vision (1.2M photos). While traditional algorithms struggled at 26% error, AlexNet used two video-game cards (GTX 580) to slash error to 15.3% — igniting modern deep learning.",
-          es: "ImageNet era el mundial de visión artificial (1,2M fotos). Los algoritmos tradicionales tenían 26% de error. AlexNet usó dos tarjetas de videojuegos (GTX 580) y redujo el error a 15,3% — desatando la IA moderna.",
-          he: "תחרות ImageNet הייתה אליפות העולם בראייה ממוחשבת (1.2 מיליון תמונות). אלגוריתמים מסורתיים נתקעו ב־26% שגיאה. אלכסנט השתמשה בשני כרטיסי מסך למשחקים (GTX 580) וריסקה את השגיאה ל־15.3% — והציתה את מהפכת ה־AI המודרנית."
+          en: "ImageNet was a dataset of 1.2M photos where traditional CPU models stalled at 26.2% error. In 2012, AlexNet trained on two gaming GPUs (GTX 580) and slashed error to 15.3% — igniting modern AI.",
+          es: "ImageNet era el torneo mundial (1,2M de fotos) donde los modelos en CPU estaban estancados en 26,2% de error. En 2012, AlexNet entrenó en 2 GPUs de videojuegos comerciales (GTX 580) y pulverizó el error a 15,3%, iniciando la era de la IA moderna.",
+          he: "‏ImageNet הייתה תחרות עולמית (1.2 מיליון תמונות) שבה מודלים של מעבדי CPU נתקעו ב־26.2% שגיאה. ב־2012, אלכסנט אומנה על 2 כרטיסי GPU של משחקים (GTX 580), ריסקה את השגיאה ל־15.3% — והציתה את עידן ה־AI."
         },
         source: "ILSVRC 2012 · Krizhevsky, Sutskever, Hinton · Error rate 26.2% → 15.3%",
-        notes: "El contador baja de 26,2% a 15,3%.\nExplicar que ImageNet era el mundial de reconocimiento visual y que dos tarjetas comerciales para videojuegos superaron a los mayores centros de supercómputo."
+        notes: "DIFERENCIA CLAVE:\n- ImageNet: Es el torneo y la base de datos de 1,2 millones de fotos (Fei-Fei Li / Stanford). Antes de 2012, todos competían con algoritmos clásicos en CPUs normales y no bajaban del 26% de error.\n- AlexNet: Es la red neuronal profunda (Krizhevsky, Sutskever, Hinton). En vez de CPUs, la reprogramaron para correr en 2 tarjetas de videojuegos (NVIDIA GTX 580). Al procesar millones de multiplicaciones en paralelo, aplastaron el error al 15,3%."
       },
       {
         id: "machine-formula", act: "M", type: "replacement",
@@ -639,27 +640,36 @@
         id: "middot", act: "VII", type: "middot",
         en: "Chesed gives. Gevurah limits. Tiferet balances.",
         he: "חסד נותן, גבורה מגבילה, ותפארת מאזנת",
-        tag: "A CHASSIDIC LENS",
+        tag: "A CHASSIDIC LENS FOR AI",
+        sub: {
+          en: "Chesed generates and expands. Gevurah sets guardrails and restrains. Tiferet harmonizes and creates truth.",
+          es: "Jésed genera y expande. Gevurá fija límites y filtros de seguridad. Tiféret armoniza y produce equilibrio.",
+          he: "חסד מייצר ומרחיב. גבורה מגבילה ומציבה גבולות בטיחות. תפארת מאזנת ומביאה אמת והרמוניה."
+        },
         middot: [
-          { en: "CHESED", he: "לתת" },
-          { en: "GEVURAH", he: "להגביל" },
-          { en: "TIFERET", he: "לאזן" }
+          { en: "CHESED · GIVE", he: "חֶסֶד · לתת ולהרחיב" },
+          { en: "GEVURAH · LIMIT", he: "גְּבוּרָה · להגביל ולסנן" },
+          { en: "TIFERET · BALANCE", he: "תִּפְאֶרֶת · לאזן ולהרמן" }
         ],
-        notes: "Usar las midot como lente de diseño responsable.\nCapacidad sin límite puede dañar; límite sin generosidad impide crear."
+        notes: "Usar las midot como lente de diseño responsable en IA.\nChesed es la generación sin fin (prompts, tokens, capacidad). Gevurah son los guardrails y el filtrado ético. Tiferet es el producto armonizado y útil."
       },
       {
         id: "lowest-place", act: "VIII", type: "lowlands",
         en: "AI reaches the lowest places. That is where holiness belongs.",
         he: "הבינה המלאכותית מגיעה למקומות הנמוכים ביותר — ושם שייכת הקדושה",
-        notes: "Volver explícitamente a dira betajtonim de la clase 1.\nSi la IA entra en lo cotidiano, allí mismo puede servir una finalidad sagrada."
+        tag: "DIRA BATACHTONIM",
+        background: "img/commons/770-door.jpg",
+        source: "Tanya, ch. 36 · 770 Eastern Parkway (Wikimedia Commons)",
+        notes: "Volver explícitamente a dira betajtonim de la clase 1.\nSi la IA entra en lo más cotidiano y material, allí mismo debe servir a una finalidad sagrada: transformar la materia terrenal en morada para D-os."
       },
       {
         id: "revelation-below", act: "VIII", type: "quote",
         en: "Every revelation below unlocks a revelation above.",
         he: "כל גילוי למטה פותח גילוי למעלה.",
         tag: "A CHASSIDIC TEACHING",
-        source: "Zohar I, Vayera 117a · wisdom below and wisdom above open together",
-        notes: "Enseñanza jasídica: la sabiduría de abajo y la de arriba se abren juntas.\nNuestra tarea: llenar la materia de espíritu."
+        background: "img/commons/deep-field-revelation.jpg",
+        source: "Zohar I, Vayera 117a · NASA / ESA Hubble Ultra Deep Field (Wikimedia Commons)",
+        notes: "Enseñanza jasídica: la sabiduría de abajo (ciencias, tecnología) y la de arriba (Torá, jasidut) se abren juntas.\nAl revelar las leyes profundas del universo material, desbloqueamos la comprensión de lo divino."
       },
       {
         id: "besht-ai", act: "VIII", type: "quote",
@@ -669,18 +679,36 @@
         notes: "Unir acceso espiritual y acceso técnico sin decir que son equivalentes.\nLa herramienta libera tiempo; el estudio sigue requiriendo voluntad y precisión."
       },
       {
-        id: "october-awakening", act: "VIII", type: "quote",
-        en: "After October 7th, many hearts opened. That awakening is a gift — start with yourself.",
-        he: "אחרי שבעה באוקטובר, הרבה לבבות נפתחו. ההתעוררות הזאת היא מתנה — תתחילו מעצמכם.",
-        tag: "REFLECTION",
-        source: "JPPI 2025 · JFNA 2025 · evidence is heterogeneous and self-reported",
-        notes: "Lámina sobria: sin fotos de víctimas ni cifras.\nNo afirmar un giro uniforme; hablar de muchos corazones y empezar por uno mismo."
+        id: "october-awakening", act: "VIII", type: "images",
+        en: "After October 7th, hearts opened: crowds singing Torah, soldiers with tzitzit",
+        he: "אחרי שבעה באוקטובר, הלבבות נפתחו: שירת תורה בהופעות המונים, ציציות בחזית",
+        sub: {
+          en: "From Omer Adam concerts turning into mass prayer to secular soldiers requesting tzitzit as spiritual armor: an unprecedented spiritual awakening.",
+          es: "De conciertos de Omer Adam convertidos en rezo masivo a soldados seculares pidiendo tzitzit como armadura espiritual: una revolución espiritual y de unidad.",
+          he: "מהופעות ענק שהפכו לתפילה משותפת ועד חיילים המבקשים ציצית כשריון רוחני: התעוררות ואחדות שאין להן תקדים."
+        },
+        tag: "SPIRITUAL REVOLUTION",
+        images: [
+          { src: "img/commons/omer-adam-live.jpg", label: "OMER ADAM · TORAH SONGS IN CONCERT" },
+          { src: "img/commons/tzitzit-soldier.jpg", label: "SOLDIER WITH TZITZIT · SPIRITUAL ARMOR" },
+          { src: "img/commons/idf-unity.jpg", label: "UNITY & PRAYER · ACHDUT" }
+        ],
+        source: "JPPI 2025 · JFNA 2025 · Israeli civil mobilization & spiritual awakening",
+        notes: "Mostrar la revolución espiritual que se desató tras el 7 de octubre: la apertura masiva en conciertos populares donde decenas de miles cantan canciones de Torá, y miles de soldados y jóvenes seculares pidiendo usar tzitzit (incluso sin kipá) como conexión sagrada y escudo de unidad."
       },
       {
-        id: "voice-nations", act: "VIII", type: "mission",
-        en: "Not only for our people — for the whole world. AI + English = a voice to the nations.",
-        he: "לא רק לעם שלנו — לכל העולם. בינה מלאכותית + אנגלית = קול אל העמים.",
-        notes: "Cambiar la escala: del trabajo interior a una voz responsable hacia afuera.\nPedir un ejemplo de mensaje que valga la pena traducir y compartir."
+        id: "voice-nations", act: "VIII", type: "image",
+        en: "Torah is not only for our people — it brings light to all humanity: Bnei Noach & 7 for 70",
+        he: "התורה אינה רק לעם שלנו — היא מביאה אור לאנושות כולה: בני נח ו־7 מצוות",
+        sub: {
+          en: "The Torah defines a path of holiness for every human being: the 7 Noahide Laws. With AI and English, we can reach and inspire the 70 nations.",
+          es: "La Torá define un camino de santidad para toda la humanidad: las 7 Mitzvot de Nóaj. Con IA e inglés, tenemos la voz para enseñarlo a las 70 naciones (7 for 70).",
+          he: "התורה מגדירה דרך של קדושה ומוסר לכל האנושות: שבע מצוות בני נח. בעזרת AI ואנגלית, ביכולתנו להגיע ל־70 האומות (7 for 70)."
+        },
+        image: { src: "img/commons/noahide-bnei-noach.jpg", label: "7 FOR 70 · SEVEN LAWS OF NOAH TO THE NATIONS" },
+        tag: "BNEI NOACH · 7 FOR 70",
+        source: "7for70 · Rabbi Boaz Kali · The Rebbe’s universal Noahide campaign · Beit Jann declaration (Wikimedia Commons)",
+        notes: "Mostrar que la Torá no es sólo para el pueblo judío; es para toda la humanidad.\nLas 7 Mitzvot de Benéi Noaj conectan a todas las naciones con la santidad divina.\nCon las herramientas de IA y el inglés, la misión es ser una voz y una luz para las 70 naciones."
       },
       {
         id: "access", act: "VIII", type: "access",

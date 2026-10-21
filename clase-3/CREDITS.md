@@ -37,6 +37,12 @@ Imágenes descargadas de Wikimedia Commons el 20-10-2026, optimizadas como JPG. 
 - `geforce-256.jpg` — Hyins — [dominio público](https://commons.wikimedia.org/wiki/File:VisionTek_GeForce_256.jpg)
 - `retro-racing-illustration.jpg` — OpenAI ImageGen — ilustración generada para este deck; no es una foto histórica.
 - `shabbat-table.jpg` — Crzrussian — [CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Shabbat_table_setting.jpg)
+- `beit-hamikdash.jpg` — Holyland Model of Jerusalem (Second Temple) — [File:Second temple.jpg](https://commons.wikimedia.org/wiki/File:Second_temple.jpg) (Israel Museum / Wikimedia Commons)
+- `deep-field-revelation.jpg` — NASA / ESA / S. Beckwith (STScI) & HUDF Team — [File:Hubble ultra deep field.jpg](https://commons.wikimedia.org/wiki/File:Hubble_ultra_deep_field.jpg) (dominio público)
+- `noahide-bnei-noach.jpg` — Rabbi Boaz Kali (7for70) & Druze leaders in Beit Jann — [File:Noahide Laws.BaitJan.jpg](https://commons.wikimedia.org/wiki/File:Noahide_Laws.BaitJan.jpg)
+- `omer-adam-live.jpg` — Simon Elmalem — [File:Omer Adam 1.jpg](https://commons.wikimedia.org/wiki/File:Omer_Adam_1.jpg) (CC BY-SA 4.0)
+- `tzitzit-soldier.jpg` — Yoav Lemmer / AFP — [File:IDF soldier put on tefillin.jpg](https://commons.wikimedia.org/wiki/File:IDF_soldier_put_on_tefillin.jpg)
+- `idf-unity.jpg` — Israel Defense Forces — [File:IDF Soldiers at the Western Wall](https://commons.wikimedia.org/wiki/File:Flickr_-_Israel_Defense_Forces_-_IDF_Soldiers_at_the_Western_Wall.jpg) (CC BY 2.0)
 
 Las imágenes con marcas o personas se usan editorialmente y no implican patrocinio.
 
@@ -54,7 +60,7 @@ Todos los clips fueron descargados como fuente con `yt-dlp`, recortados y transc
 - `v8-musk-work-optional.mp4` — [Elon Musk on optional work](https://www.youtube.com/watch?v=NiJIpcrgEA0), 00:08–00:42.
 - `v9-optimus.mp4` — [Tesla Optimus](https://www.youtube.com/watch?v=lK7TjujKQLw), 00:00–00:32.
 - `v10-ai-demo.mp4` — [OpenAI voice demonstration](https://www.youtube.com/watch?v=4jBcK0cYass), 00:08–00:38.
-- `w1-human-computer.mp4` — [3 Body Problem (Netflix)](https://www.youtube.com/watch?v=v4GPVZG3qi0), 01:20–01:48; demostración a escala de 30 millones de personas actuando como compuertas lógicas (Human Computer).
+- `w1-human-computer.mp4` — Vsauce (Mind Field), [The Stilwell Brain](https://www.youtube.com/watch?v=rA5qnZUXcqo); red neuronal biológica humana en un estadio con 5 capas reconociendo dígitos manuscritos.
 - `w2-cpu-gpu.mp4` — [NVIDIA NVISION 08 parallel-computing demonstration](https://www.youtube.com/watch?v=8_ZTvG1WQxM), 02:43–03:18.
 - `w4-transistor.mp4` — [Transistor demonstration](https://www.youtube.com/watch?v=Hi-zwyBjQwo), 00:04–00:27.
 - `w5-next-word.mp4` — 3Blue1Brown, [Large Language Models explained briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs), 00:33–01:29.
