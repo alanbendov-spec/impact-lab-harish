@@ -1,0 +1,11 @@
+# Local QA and working media
+clase-3/_shots/
+clase-3/videos/_src-*.mp4
+clase-3/_work/
+clase-3/*.log
+clase-3/.playwright-cli/
+clase-3/output/
+clase-3/audio/__pycache__/
+olim/.playwright-cli/
+olim/output/
+olim/qa/

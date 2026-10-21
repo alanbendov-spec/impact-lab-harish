@@ -1,0 +1,72 @@
+{
+  "files": 72,
+  "failures": [
+    {
+      "index": 31,
+      "id": "machine-alexnet",
+      "mode": "kids",
+      "duration": 10.1,
+      "bitrate": 64459,
+      "bytes": 81380,
+      "score": 0.643,
+      "transcript": "בשנת 2012, אלקסנט למדה לזהות תמונות באזרת שני קרטיסים גרפים, והצליחה הרבה יותר מכל המתחרים.",
+      "attempt": 3
+    },
+    {
+      "index": 53,
+      "id": "musk-optional",
+      "mode": "kids",
+      "duration": 10.1,
+      "bitrate": 64459,
+      "bytes": 81380,
+      "score": 0.684,
+      "transcript": "מסק מנהבה שבעתיד עבודת יהיה בחירה, כמו שמישהו מגדל ירקות להנאה, גם כשאפשר לקנות אותם. זאת החזית, לא עובדה.",
+      "attempt": 3
+    },
+    {
+      "index": 55,
+      "id": "musk-rambam",
+      "mode": "kids",
+      "duration": 10.1,
+      "bitrate": 64459,
+      "bytes": 81380,
+      "score": 0.762,
+      "transcript": "מסק מדבר על עבודה שתהיה בחירה. הרמב\"ם מדבר על בני אדם שפנוים לדעת את \"ה\". תנאי ומתרה, אינם אותו דבר.",
+      "attempt": 3
+    },
+    {
+      "index": 58,
+      "id": "middot",
+      "mode": "kids",
+      "duration": 10.1,
+      "bitrate": 64459,
+      "bytes": 81380,
+      "score": 0.75,
+      "transcript": "כחסד נותן, גבורה הוצרת כשצריך ותפערת מוזנת ביניהם. גם טכנולוגיה טובה צריכה יכולת, גבול ושיקול דעת.",
+      "attempt": 3
+    },
+    {
+      "index": 60,
+      "id": "revelation-below",
+      "mode": "kids",
+      "duration": 10.1,
+      "bitrate": 64459,
+      "bytes": 81380,
+      "score": 0.765,
+      "transcript": "כאשר חוכמה מתגלה מלמטה נפתח התאפשרות לגלות חוכמה מלמעלה. התפקיד שלנו הוא לחבר בין השתיים בתוך החיים.",
+      "attempt": 3
+    },
+    {
+      "index": 65,
+      "id": "will",
+      "mode": "kids",
+      "duration": 10.1,
+      "bitrate": 64459,
+      "bytes": 81380,
+      "score": 0.765,
+      "transcript": "אחרי שהקלים נעשו חזקים בוזמינים, ישארת שאלה אחת. מה אנחנו באמת רוצים לעשות איתם? הרצון מחוון את הכוח.",
+      "attempt": 3
+    }
+  ],
+  "same_size_collisions": []
+}

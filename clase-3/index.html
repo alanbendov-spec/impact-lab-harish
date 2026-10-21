@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title></title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="stage" aria-live="polite">
+    <div id="deck"></div>
+    <div id="timeline-shell" aria-hidden="true"></div>
+    <header id="hud">
+      <div id="act-indicator"></div>
+      <div id="counter"></div>
+    </header>
+    <footer id="progress-track"><span id="progress"></span></footer>
+    <nav id="controls">
+      <button id="prev" type="button">‹</button>
+      <button id="next" type="button">›</button>
+    </nav>
+    <aside id="notes-panel" aria-hidden="true">
+      <div id="notes-head"></div>
+      <div id="notes-text"></div>
+      <div id="notes-hint"></div>
+    </aside>
+  </main>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Olim Impact Lab · Harish</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="deck" aria-live="polite"></main>
+
+  <header class="topbar">
+    <div class="brand"><img src="assets/emblema-navy.png" alt=""><span>OLIM IMPACT LAB</span></div>
+    <div class="tools">
+      <button id="voice" class="tool" type="button" title="Hebrew audio" aria-label="Play Hebrew audio">🔊 <span>HE</span></button>
+      <div class="langs" aria-label="Language">
+        <button data-set-lang="he">עב</button><button class="active" data-set-lang="en">EN</button><button data-set-lang="es">ES</button><button data-set-lang="ru">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <aside id="scoreboard" aria-label="Team scoreboard">
+    <div class="score-title">TEAM POINTS <small>click team → active</small></div>
+    <div id="teams"></div>
+  </aside>
+
+  <aside id="notes" aria-label="Facilitator notes"><b>FACILITATOR</b><p id="noteText"></p></aside>
+
+  <footer class="bottombar">
+    <button id="prev" class="navbtn" type="button" aria-label="Previous">←</button>
+    <span id="count">01 / 01</span>
+    <div class="progress"><i id="progress"></i></div>
+    <button id="overviewBtn" class="mini" type="button">GRID</button>
+    <button id="next" class="navbtn" type="button" aria-label="Next">→</button>
+  </footer>
+  <div id="overview" aria-label="Slide overview"></div>
+  <script src="app.js"></script>
+</body>
+</html>
