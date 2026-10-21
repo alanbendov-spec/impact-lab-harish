@@ -227,10 +227,6 @@
         background: "img/commons/boulton-watt.jpg",
         timeline: { window: [1745, 1850], active: ["r1"] },
         media: [{ id: "V1", slug: "v1-steam", label: "V1 · 07:20–07:50 · OPERATING REPLICA", autoplay: true, volume: 0.5 }],
-        images: [
-          { src: "img/commons/rocket-drawing.jpg", label: "STEPHENSON’S ROCKET" },
-          { src: "img/commons/power-loom-early.jpg", label: "POWER LOOM" }
-        ],
         source: "Video: Industrial Revolution, A7TaigDb0WQ · replica, not 19th-century footage",
         notes: "Mostrar que la primera revolución amplifica fuerza física.\nEl clip debe ser breve y dejar oír el ritmo mecánico del vapor."
       },
@@ -253,10 +249,6 @@
         background: "img/commons/ford-assembly-restored.jpg",
         timeline: { window: [1860, 1920], active: ["r2", "rashab"] },
         media: [{ id: "V2", slug: "v2-ford-c1919", label: "V2 · FORD, c. 1919 · 01:30–02:10", autoplay: true, muted: true }],
-        images: [
-          { src: "img/commons/edison-bulb.jpg", label: "ELECTRIC LIGHT" },
-          { src: "img/commons/ford-assembly-1913.jpg", label: "ASSEMBLY LINE · 1913 PHOTO" }
-        ],
         source: "Video: Where and How Fords Are Made 2, c. 1919 · moving line introduced 1913",
         notes: "La segunda revolución organiza energía y producción a escala.\nEl Ford de 1913 sirve para ver velocidad, repetición y abundancia material."
       },
@@ -338,12 +330,19 @@
         notes: "Hacer coincidir el cambio del interruptor con 0 → 1.\nNo avanzar hasta que la relación física/binaria esté clara."
       },
       {
-        id: "machine-human-video", act: "M", type: "machine-human",
-        en: "People can compute when each person follows one simple rule.",
-        he: "אנשים יכולים לחשב כשכל אחד פועל לפי כלל פשוט.",
-        interaction: "Hand up = 1, hand down = 0 — 3 students form a binary number in their row.",
-        interactionHe: "יד למעלה = 1, יד למטה = 0",
-        notes: "INTERACCIÓN (sentados): tres alumnos forman un número binario.\nCada uno sostiene un solo estado, 0 o 1; juntos representan un número y ejecutan una instrucción."
+        id: "machine-human-video", act: "M", type: "video",
+        en: "When people follow one binary rule, they form a living computer",
+        he: "כשבני אדם עוקבים אחרי כלל בינארי פשוט, הם יוצרים מחשב חי",
+        sub: {
+          en: "A single 0 or 1 is simple. But connect thousands following logic gates (AND, OR), and complex computation emerges.",
+          es: "Un solo 0 o 1 no hace nada. Pero al conectar miles siguiendo compuertas lógicas (AND, OR), emerge el cómputo complejo.",
+          he: "0 או 1 בודד אינו אומר דבר. אך כשמחברים אלפים לפי שערים לוגיים (AND, OR), מתפרץ חישוב מורכב."
+        },
+        interaction: "Classroom experiment: 3 students raise/lower hands (1 or 0) to form a logic gate.",
+        interactionHe: "ניסוי בכיתה: 3 תלמידים מרימים/מורידים יד (1 או 0) כדי ליצור שער לוגי",
+        media: [{ id: "W1", slug: "w1-human-computer", label: "W1 · HUMAN COMPUTER · 01:20–01:48", autoplay: true, volume: 0.6 }],
+        source: "3 Body Problem · The Human Computer · 30 million people acting as logic gates",
+        notes: "INTERACCIÓN: tres alumnos forman un número binario o compuerta AND.\nEl clip muestra qué pasa cuando esa reacción binaria se multiplica a escala: emerge un computador vivo."
       },
       {
         id: "machine-eniac", act: "M", type: "machine-eniac",
@@ -363,9 +362,9 @@
         id: "machine-parallel-video", act: "M", type: "video",
         en: "A GPU makes parallel work visible.",
         he: "כרטיס גרפי הופך עבודה מקבילית לדבר שאפשר לראות.",
-        media: [{ id: "W2", slug: "w2-cpu-gpu", label: "W2 · MYTHBUSTERS · 02:43–03:18", autoplay: true, muted: true }],
+        media: [{ id: "W2", slug: "w2-cpu-gpu", label: "W2 · MYTHBUSTERS · 02:43–03:18", autoplay: true, volume: 0.8 }],
         source: "NVIDIA NVISION 08 demonstration · excerpt via HOSTKEY; classroom analysis",
-        notes: "La CPU pintaría los puntos uno por uno; la GPU dispara muchas operaciones equivalentes al mismo tiempo.\nLa demostración de pintura hace visible esa simultaneidad. No es una prueba de velocidad ni muestra núcleos reales."
+        notes: "La CPU pintaría los puntos uno por uno; la GPU dispara muchas operaciones equivalentes al mismo tiempo.\nLa demostración de pintura hace visible esa simultaneidad. Audio activo con el disparo de pintura."
       },
       {
         id: "machine-same-math", act: "M", type: "quote",
@@ -383,10 +382,15 @@
       },
       {
         id: "machine-alexnet", act: "M", type: "alexnet",
-        en: "2012: two gaming cards trained AlexNet — and it crushed the world contest.",
-        he: "2012: שני כרטיסי משחק אימנו את AlexNet — והיא ניצחה בגדול בתחרות העולמית.",
-        source: "Krizhevsky, Sutskever, Hinton · ImageNet error 15.3% vs 26.2%",
-        notes: "El contador baja de 26,2% a 15,3%.\nNo decir que se entrenó en un dormitorio: no está verificado."
+        en: "2012: AlexNet shocked ImageNet on 2 gaming GPUs",
+        he: "2012: אלכסנט הדהימה את תחרות ImageNet עם 2 כרטיסי גיימינג",
+        sub: {
+          en: "ImageNet was the world championship of computer vision (1.2M photos). While traditional algorithms struggled at 26% error, AlexNet used two video-game cards (GTX 580) to slash error to 15.3% — igniting modern deep learning.",
+          es: "ImageNet era el mundial de visión artificial (1,2M fotos). Los algoritmos tradicionales tenían 26% de error. AlexNet usó dos tarjetas de videojuegos (GTX 580) y redujo el error a 15,3% — desatando la IA moderna.",
+          he: "תחרות ImageNet הייתה אליפות העולם בראייה ממוחשבת (1.2 מיליון תמונות). אלגוריתמים מסורתיים נתקעו ב־26% שגיאה. אלכסנט השתמשה בשני כרטיסי מסך למשחקים (GTX 580) וריסקה את השגיאה ל־15.3% — והציתה את מהפכת ה־AI המודרנית."
+        },
+        source: "ILSVRC 2012 · Krizhevsky, Sutskever, Hinton · Error rate 26.2% → 15.3%",
+        notes: "El contador baja de 26,2% a 15,3%.\nExplicar que ImageNet era el mundial de reconocimiento visual y que dos tarjetas comerciales para videojuegos superaron a los mayores centros de supercómputo."
       },
       {
         id: "machine-formula", act: "M", type: "replacement",
@@ -399,10 +403,14 @@
         id: "machine-next-word", act: "M", type: "video",
         en: "Trained only to guess the next word… it learned to translate, code and reason.",
         he: "אימנו אותה רק לנחש את המילה הבאה… והיא למדה לתרגם, לתכנת ולחשוב.",
-        sub: { en: "It compares each guess with the real next word, then adjusts and tries again.", he: "המודל משווה כל ניחוש למילה האמיתית, מתקן ומנסה שוב." },
-        media: [{ id: "W5", slug: "w5-next-word", label: "W5 · 3BLUE1BROWN · 00:40–01:07", autoplay: true, volume: 0.5 }],
+        sub: {
+          en: "It assigns probabilities to all possible next words, adjusts millions of parameters, and repeats.",
+          es: "Asigna probabilidades a todas las palabras posibles, ajusta millones de parámetros y repite el proceso.",
+          he: "המודל מעניק הסתברות לכל מילה אפשרית, מתקן מיליוני פרמטרים וחוזר חלילה."
+        },
+        media: [{ id: "W5", slug: "w5-next-word", label: "W5 · 3BLUE1BROWN · 00:33–01:29", autoplay: true, volume: 0.8 }],
         source: "3Blue1Brown · Large Language Models explained briefly · excerpt for classroom analysis",
-        notes: "Usar el clip para fijar la mecánica de predecir la siguiente palabra.\nDespués separar objetivo de entrenamiento y capacidades observadas."
+        notes: "El video explica con calma cómo predecir la siguiente palabra mediante probabilidades genera diálogo natural y razonamiento emergente."
       },
       {
         id: "machine-surprise", act: "M", type: "quote",
@@ -541,21 +549,28 @@
         notes: "Marcar estas frases como predicciones, no como hechos observados.\nEl dorado queda reservado para las fuentes clásicas; el cian identifica proyecciones tecnológicas."
       },
       {
-        id: "flying-car", act: "VI", type: "video-question",
-        en: "Who knows what this is?",
-        he: "מי יודע מה זה?",
-        background: "img/commons/apollo-bootprint.jpg",
-        media: [{ id: "V7", slug: "v7-the-ramp", label: "WHAT IS THIS? · 00:13–00:45", autoplay: true, muted: true }],
-        notes: "Entrar sin contexto y dejar el video ocupar toda la pantalla.\nAl terminar aparece la pregunta; pedir respuestas antes de revelar el nombre."
+        id: "flying-car", act: "VI", type: "quote",
+        en: "What happens when software meets the physical world?",
+        he: "מה קורה כשהתוכנה פוגשת את העולם הפיזי?",
+        sub: {
+          en: "Beyond screens: humanoid robots, autonomous factories, and vehicles that fly.",
+          es: "Más allá de las pantallas: robots humanoides, fábricas autónomas y vehículos que vuelan.",
+          he: "מעבר למסכים: רובוטים דמויי אדם, מפעלים אוטונומיים וכלי רכב מעופפים."
+        },
+        notes: "Transición hacia el mundo físico y la robótica.\nPlantear la pregunta antes de mostrar el prototipo volador."
       },
       {
-        id: "musk-reveal", act: "VI", type: "image",
-        en: "Tesla Roadster · Oct 15, 2026 · Elon Musk",
-        he: "טסלה רודסטר · 15 באוקטובר 2026 · אילון מאסק",
-        background: "img/commons/elon-musk-2015.jpg",
-        image: { src: "img/commons/elon-musk-2015.jpg", label: "ELON MUSK · TESLA ROADSTER REVEAL" },
-        source: "Tesla, The Ramp · demo 15 Oct 2026; AP, 16 Oct 2026 · prototype, not a certified flying car",
-        notes: "Revelar a Musk como puente hacia una conversación económica.\nLa importancia aquí no es el vehículo, sino la visión de trabajo futuro."
+        id: "musk-reveal", act: "VI", type: "video",
+        en: "Tesla Roadster: Elon Musk tests a rocket-thruster flying car",
+        he: "טסלה רודסטר: אילון מאסק בודק רכב מעופף עם מנועי רקטה",
+        sub: {
+          en: "Equipped with cold-gas thrusters developed with SpaceX, Musk demonstrated a prototype capable of flight and hover.",
+          es: "Equipado con propulsores de gas frío desarrollados junto a SpaceX, Musk mostró un prototipo capaz de volar y levitar.",
+          he: "מצויד במנועי גז קר שפותחו עם SpaceX, מאסק הציג אב-טיפוס המסוגל לריחוף וטיסה."
+        },
+        media: [{ id: "V7", slug: "v7-the-ramp", label: "V7 · TESLA ROADSTER · SPACEX THRUSTERS", autoplay: true, volume: 0.8 }],
+        source: "Tesla, The Ramp · Demo with SpaceX cold-gas thrusters",
+        notes: "El clip muestra el despegue con propulsores de cohete.\nConectar esta transformación física con la visión de trabajo opcional."
       },
       {
         id: "post-labor", act: "VI", type: "post-labor",
@@ -799,13 +814,13 @@
     "ai-revolution": "La máquina aprendió lenguaje, visión y una aparente forma de pensar",
     "machine-childhood": "Cuando era niño, comprábamos tarjetas NVIDIA… para jugar carreras.",
     "machine-switch": "Un computador es solo un conjunto de interruptores. ENCENDIDO = 1. APAGADO = 0.",
-    "machine-human-video": "Las personas pueden calcular cuando cada una sigue una regla simple.",
+    "machine-human-video": "Cuando las personas siguen una regla binaria, forman un computador vivo",
     "machine-eniac": "1945: 17.468 tubos llenaban una sala. Hoy: 208 mil millones de interruptores en un chip.",
     "machine-parallel": "Una CPU es un genio que trabaja en fila. Una GPU son miles trabajando a la vez.",
     "machine-parallel-video": "Una GPU permite ver el trabajo en paralelo.",
     "machine-same-math": "Los juegos y la IA necesitan la misma matemática: millones de multiplicaciones a la vez.",
     "machine-old-new": "La IA antigua seguía reglas escritas por personas. La nueva aprende de ejemplos.",
-    "machine-alexnet": "2012: dos tarjetas para videojuegos entrenaron AlexNet y arrasaron en la competencia mundial.",
+    "machine-alexnet": "2012: AlexNet revolucionó ImageNet con 2 tarjetas gamer",
     "machine-formula": "Datos + chips para videojuegos + redes neuronales = la explosión de la IA.",
     "machine-next-word": "La entrenaron solo para adivinar la palabra siguiente… y aprendió a traducir, programar y razonar.",
     "machine-surprise": "Diseñaron el aprendizaje. Lo que aprendió los sorprendió.",
@@ -824,8 +839,8 @@
     "torah": "Torá: cada fuente puede entrar en una conversación viva",
     "time": "Tiempo: la automatización puede devolver nuestra atención a lo que importa",
     "leaders-abundance": "Los tecnólogos predicen abundancia. Las fuentes clásicas definen su propósito.",
-    "flying-car": "¿Quién sabe qué es esto?",
-    "musk-reveal": "Tesla Roadster · 15 de octubre de 2026 · Elon Musk",
+    "flying-car": "¿Qué ocurre cuando el software se encuentra con el mundo físico?",
+    "musk-reveal": "Tesla Roadster: Elon Musk prueba un auto volador con propulsores de cohete",
     "post-labor": "«La economía poslaboral describe una transformación en la que la IA y la automatización vuelven casi insignificante el costo del trabajo humano en todos los sectores».",
     "musk-optional": "«Mi predicción es que el trabajo será opcional».",
     "optimus": "Optimus convierte software en trabajo físico",
@@ -882,8 +897,8 @@
   function slide(id) { return C.slides.find(function (item) { return item.id === id; }); }
   slide("opening").sub = { en: "Living the days of Moshiach", es: "Vivir los días del Mashíaj", he: "לחיות את ימות המשיח" };
   slide("days-of-moshiach").sub = { en: slide("days-of-moshiach").subEn, es: "Espadas en arados · el desarme como anticipo concreto de Isaías 2:4", he: "וכיתתו חרבותם לאתים · פירוק הנשק כטעימה מוחשית מישעיהו ב׳, ד׳" };
-  slide("machine-human-video").interactionEs = "Mano arriba = 1, mano abajo = 0. Tres estudiantes forman un número binario.";
-  slide("machine-human-video").interactionHe = "יד למעלה = 1, יד למטה = 0. שלושה תלמידים יוצרים מספר בינארי.";
+  slide("machine-human-video").interactionEs = "Mano arriba = 1, mano abajo = 0. Tres estudiantes forman una compuerta lógica.";
+  slide("machine-human-video").interactionHe = "יד למעלה = 1, יד למטה = 0. שלושה תלמידים יוצרים שער לוגי.";
   slide("machine-parallel-video").notesI18n = {
     en: "A CPU would paint the dots one after another. The GPU launches many similar operations at the same time. The paint demonstration makes parallel work visible; it is not a benchmark and the paintballs are not literal GPU cores.",
     es: "Una CPU pintaría los puntos uno tras otro. La GPU lanza muchas operaciones parecidas al mismo tiempo. La pintura hace visible el paralelismo; no es una prueba de velocidad y las bolas no representan núcleos reales.",
@@ -900,9 +915,9 @@
     he: "בינה ישנה נשענה בעיקר על חוקים וחיפוש שאנשים כתבו. בלמידת מכונה המערכת מקבלת דוגמאות רבות ומתקנת פרמטרים פנימיים לפי הטעויות."
   };
   slide("machine-alexnet").notesI18n = {
-    en: "In 2012 AlexNet used two GTX 580 gaming GPUs. Its ImageNet top-five error was 15.3%, far below the next entry at 26.2%. The result showed that deep networks, large datasets and GPU computing had matured together.",
-    es: "En 2012 AlexNet usó dos GPU GTX 580 para videojuegos. Su error top-5 en ImageNet fue 15,3%, frente a 26,2% del siguiente equipo. El resultado mostró que redes profundas, grandes datos y cómputo GPU habían madurado juntos.",
-    he: "בשנת 2012 אלכסנט השתמשה בשני כרטיסי GTX 580. שיעור הטעות שלה היה 15.3% לעומת 26.2% למקום הבא, והראה שנתונים, רשתות עמוקות ו־GPU הבשילו יחד."
+    en: "In 2012 AlexNet used two GTX 580 gaming GPUs. Its ImageNet top-five error was 15.3%, far below the next entry at 26.2%. The result proved that deep neural networks, large datasets and GPU parallel computing had matured together to outperform all traditional vision code.",
+    es: "En 2012 AlexNet usó dos GPU GTX 580 para videojuegos. Su error top-5 en ImageNet bajó al 15,3%, frente al 26,2% del competidor más cercano. El resultado demostró que redes profundas, grandes conjuntos de datos y cómputo GPU superaban a todos los métodos tradicionales.",
+    he: "בשנת 2012 אלכסנט השתמשה בשני כרטיסי מסך למשחקים (GTX 580). שיעור השגיאה שלה ב-ImageNet ירד ל-15.3% לעומת 26.2% למקום השני, והוכיח שרשתות עמוקות וכרטיסי מסך יצרו קפיצת מדרגה היסטורית בבינה מלאכותית."
   };
   slide("machine-formula").notesI18n = {
     en: "No single invention caused the leap. Large datasets supplied examples, gaming chips supplied parallel computing, and neural networks supplied a method that improved from those examples.",

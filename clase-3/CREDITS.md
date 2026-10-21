@@ -54,10 +54,10 @@ Todos los clips fueron descargados como fuente con `yt-dlp`, recortados y transc
 - `v8-musk-work-optional.mp4` — [Elon Musk on optional work](https://www.youtube.com/watch?v=NiJIpcrgEA0), 00:08–00:42.
 - `v9-optimus.mp4` — [Tesla Optimus](https://www.youtube.com/watch?v=lK7TjujKQLw), 00:00–00:32.
 - `v10-ai-demo.mp4` — [OpenAI voice demonstration](https://www.youtube.com/watch?v=4jBcK0cYass), 00:08–00:38.
-- `w1-human-computer.mp4` — [Human computer](https://www.youtube.com/watch?v=p0wCX9nwGag), 29:52–30:16; conservado localmente pero descartado del deck por falta de claridad.
+- `w1-human-computer.mp4` — [3 Body Problem (Netflix)](https://www.youtube.com/watch?v=v4GPVZG3qi0), 01:20–01:48; demostración a escala de 30 millones de personas actuando como compuertas lógicas (Human Computer).
 - `w2-cpu-gpu.mp4` — [NVIDIA NVISION 08 parallel-computing demonstration](https://www.youtube.com/watch?v=8_ZTvG1WQxM), 02:43–03:18.
 - `w4-transistor.mp4` — [Transistor demonstration](https://www.youtube.com/watch?v=Hi-zwyBjQwo), 00:04–00:27.
-- `w5-next-word.mp4` — 3Blue1Brown, [Large Language Models explained briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs), 00:40–01:07.
+- `w5-next-word.mp4` — 3Blue1Brown, [Large Language Models explained briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs), 00:33–01:29.
 
 ## Fuente del punto 5500 / 1740
 

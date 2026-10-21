@@ -178,16 +178,16 @@ button{font:inherit}
 .timeline-video-slide .timeline-media .media-row{height:8cqh}
 .timeline-video-slide .timeline-media .image-slot{min-height:8cqh}
 .timeline-video-slide .timeline-media .slot-label{font-size:.55cqw;bottom:.45cqh}
-.timeline-video-slide .video{height:28cqh;max-height:none}.timeline-video-slide .video-grid{height:28cqh;max-height:none}
+.timeline-video-slide .video{height:45cqh;max-height:none}.timeline-video-slide .video-grid{height:45cqh;max-height:none}
 .slide[data-id="second-revolution"] .video video{object-fit:cover}
 .timeline-video-slide .headline{font-size:3.05cqw}
 .timeline-video-focus-slide .scene{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);column-gap:2.7cqw;text-align:left;justify-items:stretch}
-.timeline-video-focus-slide .video-grid{height:34cqh}.timeline-video-focus-slide .video{height:34cqh;aspect-ratio:16/9}
+.timeline-video-focus-slide .video-grid{height:52cqh}.timeline-video-focus-slide .video{height:52cqh;aspect-ratio:16/9}
 .timeline-video-focus-slide .copy{align-content:center;text-align:left;gap:1.1cqh}
 .timeline-video-focus-slide .headline{font-size:2.75cqw;max-width:17ch}
 .timeline-video-focus-slide .he{font-size:1.35cqw;max-width:27ch}
 .timeline-video-focus-slide .source-foot{font-size:.58cqw;text-align:left}
-.slide[data-id="chanukah-satellite"] .video{aspect-ratio:4/3;width:auto;max-width:100%;justify-self:center}
+.slide[data-id="chanukah-satellite"] .video{aspect-ratio:4/3;height:52cqh;width:auto;max-width:100%;justify-self:center}
 .slide[data-id="chanukah-satellite"] .video video{object-fit:cover}
 .video-slide .headline,.timeline-video-slide .headline{transition:color .55s var(--ease),text-shadow .55s var(--ease)}
 .video-slide.video-ended .headline,.timeline-video-slide.video-ended .headline{color:var(--gold2);text-shadow:0 0 28px rgba(201,162,75,.2)}
@@ -254,11 +254,16 @@ button{font:inherit}
 .cpu-line{display:grid;grid-template-columns:repeat(6,1fr);gap:.55cqw}.cpu-line i,.gpu-grid i{display:block;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12)}
 .active .cpu-line i{animation:cpuQueue 2.4s infinite}.cpu-line i:nth-child(1){animation-delay:.3s}.cpu-line i:nth-child(2){animation-delay:.58s}.cpu-line i:nth-child(3){animation-delay:.86s}.cpu-line i:nth-child(4){animation-delay:1.14s}.cpu-line i:nth-child(5){animation-delay:1.42s}.cpu-line i:nth-child(6){animation-delay:1.7s}
 .gpu-grid{display:grid;grid-template-columns:repeat(20,1fr);gap:.25cqw}.active .gpu-grid i{animation:gpuFlash 2.1s var(--delay) infinite}
-.alexnet-visual{display:flex;align-items:center;justify-content:center;gap:1.2cqw}.gpu-card{position:relative;width:17cqw;height:10cqw;padding:1cqw;display:grid;align-content:end;border:1px solid rgba(63,193,201,.5);background:linear-gradient(145deg,rgba(63,193,201,.16),rgba(7,16,31,.92));box-shadow:0 0 35px rgba(63,193,201,.12)}
+.alexnet-visual{display:flex;align-items:center;justify-content:center;gap:1.5cqw}
+.gpu-card{position:relative;width:17cqw;height:10.5cqw;padding:1cqw;display:grid;align-content:end;border:1px solid rgba(63,193,201,.5);background:linear-gradient(145deg,rgba(63,193,201,.16),rgba(7,16,31,.92));box-shadow:0 0 35px rgba(63,193,201,.12)}
 .gpu-card i{position:absolute;left:1.1cqw;top:1.1cqw;width:4.5cqw;height:4.5cqw;border:.3cqw solid var(--gold);box-shadow:inset 0 0 16px rgba(201,162,75,.3)}.gpu-card b{font:.85cqw Rubik;letter-spacing:.14em;color:var(--cyan2)}
-.alexnet-score{min-width:17cqw;font:650 5.3cqw Fredoka;color:var(--gold2);text-align:center}.alexnet-score span{font-size:2.1cqw;color:var(--mist)}
-.slide[data-id="machine-childhood"] .media-row{height:30cqh}.slide[data-id="machine-childhood"] .headline{font-size:3.45cqw}.slide[data-id="machine-human-video"] .headline,.slide[data-id="machine-next-word"] .headline{font-size:3.05cqw;max-width:16ch}
+.gpu-card span{display:block;font-size:.62cqw;letter-spacing:.12em;color:var(--gold2);margin-top:.2cqh}
+.alexnet-score{min-width:18cqw;font:650 5.3cqw Fredoka;color:var(--gold2);text-align:center}.alexnet-score span{font-size:2.1cqw;color:var(--mist)}
+.alexnet-score label{display:block;font-size:.72cqw;color:var(--cyan2);letter-spacing:.14em;font-weight:600;margin-top:.4cqh;font-family:Fredoka,Rubik,sans-serif}
+.alexnet-slide .sub-en{font-family:Rubik,sans-serif;font-size:1.2cqw;line-height:1.45;color:var(--mist);max-width:54ch;font-weight:400;margin-top:.4cqh}
+.slide[data-id="machine-childhood"] .media-row{height:30cqh}.slide[data-id="machine-childhood"] .headline{font-size:3.45cqw}.slide[data-id="machine-human-video"] .headline,.slide[data-id="machine-next-word"] .headline{font-size:3.05cqw;max-width:18ch}
 .slide[data-id="machine-parallel-video"] .he,.slide[data-id="machine-next-word"] .he,.slide[data-id="nisan-28-part-2"] .he{font-size:1.22cqw;max-width:38ch}
+.slide[data-id="machine-human-video"] .video,.slide[data-id="musk-reveal"] .video{aspect-ratio:16/9;height:48cqh}
 .slide[data-id="machine-revealed"] .headline{font-size:4.25cqw}.slide[data-id="october-awakening"]{background:linear-gradient(145deg,#11151d,#03060b)}.slide[data-id="october-awakening"]::before{opacity:.18}
 
 /* Act III visuals */
