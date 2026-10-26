@@ -142,6 +142,10 @@
       media.map(videoBlock).join("") + "</div>";
   }
 
+  function clockDeg(time) {
+    var hm = String(time || "12:00").split(":"), h = Number(hm[0]) % 12, m = Number(hm[1]) || 0;
+    return { hour: (h + m / 60) * 30, minute: m * 6 };
+  }
   function clockSvg() {
     var ticks = "";
     for (var i = 0; i < 12; i += 1) {
@@ -595,8 +599,8 @@
     animateCounter(slide.el);
     var hour = slide.el.querySelector(".hour-hand"), minute = slide.el.querySelector(".minute-hand");
     if (hour && minute) {
-      activeAnimations.push(hour.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(205deg)" }], { duration: 2100, delay: 250, easing: "cubic-bezier(.2,.85,.25,1)", fill: "both" }));
-      activeAnimations.push(minute.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(300deg)" }], { duration: 2100, delay: 250, easing: "cubic-bezier(.2,.85,.25,1)", fill: "both" }));
+      activeAnimations.push(hour.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(" + clockDeg(slide.clock).hour + "deg)" }], { duration: 2100, delay: 250, easing: "cubic-bezier(.2,.85,.25,1)", fill: "both" }));
+      activeAnimations.push(minute.animate([{ transform: "rotate(0deg)" }, { transform: "rotate(" + clockDeg(slide.clock).minute + "deg)" }], { duration: 2100, delay: 250, easing: "cubic-bezier(.2,.85,.25,1)", fill: "both" }));
     }
     var maxInterval = 110;
     slide.el.querySelectorAll(".interval-bar").forEach(function (bar, i) {
@@ -690,10 +694,11 @@
     if (!videoAction()) next();
   });
   document.addEventListener("keydown", function (event) {
+    if (document.getElementById("gate") || (event.target.closest && event.target.closest("input,textarea"))) return;
     if (event.key === "ArrowRight" || event.key === "PageDown") { event.preventDefault(); next(); }
     else if (event.key === "ArrowLeft" || event.key === "PageUp") { event.preventDefault(); previous(); }
     else if (event.key === " ") { event.preventDefault(); if (!videoAction()) next(); }
-    else if (event.key === "f" || event.key === "F") { event.preventDefault(); fullscreen(); }
+    else if (event.code === "KeyF" || event.key === "f" || event.key === "F") { event.preventDefault(); fullscreen(); }
     else if (event.key === "n" || event.key === "N") { event.preventDefault(); toggleNotes(); }
     else if (event.key === "a" || event.key === "A") { event.preventDefault(); audioAction(); }
     else if (event.key === "Home") { event.preventDefault(); go(0); }

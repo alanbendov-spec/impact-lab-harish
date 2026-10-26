@@ -7,6 +7,10 @@
   <title></title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="styles.css">
+<style>#gate{position:fixed;inset:0;z-index:99999;background:#0d1424;display:flex;align-items:center;justify-content:center;font-family:system-ui}#gate form{display:flex;gap:8px}#gate input,#gate button{font-size:20px;padding:10px 14px;border-radius:8px;border:1px solid #c9a24a}#gate button{background:#c9a24a;color:#0d1424;cursor:pointer}</style>
+<script>(function(){var H="db5e8c47e42eb6827671f335d5aeefeddd730a238659053a3c797ca05f4ff3cf";try{if(sessionStorage.getItem("bst-ok")===H)return}catch(e){}
+document.addEventListener("DOMContentLoaded",function(){var g=document.createElement("div");g.id="gate";g.innerHTML='<form><input type="password" placeholder="Clave" autofocus><button>Entrar</button></form>';document.body.appendChild(g);
+g.querySelector("form").onsubmit=async function(ev){ev.preventDefault();var v=g.querySelector("input").value.trim();var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(v));var x=[...new Uint8Array(b)].map(function(n){return n.toString(16).padStart(2,"0")}).join("");if(x===H){try{sessionStorage.setItem("bst-ok",H)}catch(e){}g.remove()}else{g.querySelector("input").value="";g.querySelector("input").placeholder="Clave incorrecta"}}});})();</script>
 </head>
 <body>
   <main id="stage" aria-live="polite">

@@ -23,3 +23,4 @@ Todos los clips finales están en `videos/`, H.264/AAC, `+faststart`, altura má
 - Las descargas completas `_src-*.mp4` se movieron a `_trabajo/impact-lab-3/src-videos/`.
 - Las imágenes optimizadas viven en `img/commons/`; autorías y licencias: `CREDITS.md`.
 - Los placeholders antiguos de V2, V5 y V7 no están referenciados por el deck.
+| W6 | `w6-oct7-concert.mp4` | mwpCJsQAB7Q · 01:36–02:03 · Sasson Ifram Shaulov, Menora 2024 |

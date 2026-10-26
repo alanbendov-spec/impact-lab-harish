@@ -161,7 +161,7 @@
         en: "The Baal Shem Tov opened Torah’s inner light to everyone",
         he: "הבעל שם טוב פתח את פנימיות התורה לכולם",
         background: "img/commons/besht-synagogue.jpg",
-        image: { src: "img/commons/besht-signature.jpg", label: "BAAL SHEM TOV · SIGNATURE" },
+        image: { src: "img/commons/besht-signature-white.png", label: "BAAL SHEM TOV · SIGNATURE" },
         notes: "No presentar al Besht sólo como fundador de un movimiento.\nSu innovación fue volver accesible la vida interior de la Torá."
       },
       {
@@ -194,10 +194,15 @@
       },
       {
         id: "friday-clock", act: "II", type: "clock",
-        en: "Year 5787 feels like Friday at 18:50",
-        he: "שנת תשפ״ז מרגישה כמו יום שישי בשעה 18:50",
-        clock: "18:50",
-        notes: "Presentar 18:50 como imagen proporcional del viernes, no como pronóstico.\nLa sensación es que casi todo está listo y falta encender la luz."
+        en: "Year 5787 is Friday at about 3:25 pm",
+        he: "שנת תשפ״ז היא יום שישי, בערך בשעה 15:25",
+        sub: {
+          en: "Friday daylight = 6:00 to 18:00 = 1,000 years. 5500 was noon. Shabbat starts at 18:00 = year 6000.",
+          es: "La luz del viernes = de 6:00 a 18:00 = 1.000 años. 5500 fue mediodía. Shabat entra a las 18:00 = año 6000.",
+          he: "אור יום שישי = משש בבוקר עד שש בערב = אלף שנה. תק״ש הייתה חצות. שבת נכנסת בשש = שנת ו׳ אלפים."
+        },
+        clock: "15:25",
+        notes: "Muy simple: el sexto milenio = la luz del viernes (6:00 a 18:00, día parejo). Cada hora = ~83 años. 5500 = 12:00 (jatzot, el Baal Shem Tov). 5787 = ~15:25. Shabat = 18:00 = año 6000. Quedan ~2,5 horas.\nEs una imagen, no un pronóstico. (Antes decía 18:50: estaba mal, contaba el día de medianoche a medianoche.)"
       },
       {
         id: "shabbat-smell", act: "II", type: "aroma",
@@ -679,22 +684,12 @@
         notes: "Unir acceso espiritual y acceso técnico sin decir que son equivalentes.\nLa herramienta libera tiempo; el estudio sigue requiriendo voluntad y precisión."
       },
       {
-        id: "october-awakening", act: "VIII", type: "images",
-        en: "After October 7th, hearts opened: crowds singing Torah, soldiers with tzitzit",
-        he: "אחרי שבעה באוקטובר, הלבבות נפתחו: שירת תורה בהופעות המונים, ציציות בחזית",
-        sub: {
-          en: "From Omer Adam concerts turning into mass prayer to secular soldiers requesting tzitzit as spiritual armor: an unprecedented spiritual awakening.",
-          es: "De conciertos de Omer Adam convertidos en rezo masivo a soldados seculares pidiendo tzitzit como armadura espiritual: una revolución espiritual y de unidad.",
-          he: "מהופעות ענק שהפכו לתפילה משותפת ועד חיילים המבקשים ציצית כשריון רוחני: התעוררות ואחדות שאין להן תקדים."
-        },
-        tag: "SPIRITUAL REVOLUTION",
-        images: [
-          { src: "img/commons/omer-adam-live.jpg", label: "OMER ADAM · TORAH SONGS IN CONCERT" },
-          { src: "img/commons/tzitzit-soldier.jpg", label: "SOLDIER WITH TZITZIT · SPIRITUAL ARMOR" },
-          { src: "img/commons/idf-unity.jpg", label: "UNITY & PRAYER · ACHDUT" }
-        ],
-        source: "JPPI 2025 · JFNA 2025 · Israeli civil mobilization & spiritual awakening",
-        notes: "Mostrar la revolución espiritual que se desató tras el 7 de octubre: la apertura masiva en conciertos populares donde decenas de miles cantan canciones de Torá, y miles de soldados y jóvenes seculares pidiendo usar tzitzit (incluso sin kipá) como conexión sagrada y escudo de unidad."
+        id: "october-awakening", act: "VIII", type: "video",
+        en: "After October 7th, hearts opened: a whole stadium singing Torah",
+        he: "אחרי שבעה באוקטובר, הלבבות נפתחו: אצטדיון שלם שר שירי קודש",
+        media: [{ id: "W6", slug: "w6-oct7-concert", label: "SASSON IFRAM SHAULOV · MENORA ARENA 2024", autoplay: true, volume: 0.8 }],
+        source: "Sasson Ifram Shaulov · Mechrozet Chassidit · Menora 2024 · mwpCJsQAB7Q · 01:36–02:03",
+        notes: "Mostrar la revolución espiritual tras el 7 de octubre: un cantante israelí, envuelto en la bandera, baila en el escenario con un jasid mientras decenas de miles cantan canciones de Torá."
       },
       {
         id: "voice-nations", act: "VIII", type: "image",
@@ -828,7 +823,7 @@
     "watt-jenner-volta": "El mismo siglo: Watt 1769 · Jenner 1796 · Volta 1800",
     "wellsprings": "Cuando tus manantiales se difundan hacia afuera, vendrá el Maestro",
     "seven-days": "Siete días. Siete mil años. Estamos al final del viernes.",
-    "friday-clock": "El año 5787 se siente como un viernes a las 18:50",
+    "friday-clock": "El año 5787 es un viernes a las 15:25, más o menos",
     "shabbat-smell": "El viernes por la tarde, toda la casa ya huele a Shabat",
     "technology-aroma": "La tecnología es el aroma de Shabat",
     "timeline-overview": "Dos líneas de tiempo. Una historia que se acelera.",

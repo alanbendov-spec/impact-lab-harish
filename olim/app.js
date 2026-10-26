@@ -353,6 +353,8 @@ $$('[data-set-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.setLang));
 $('#overviewBtn').onclick=()=>$('#overview').classList.toggle('on');
 $('#voice').onclick=()=>{const src=slides[current].audio;if(!src)return;if(audio){audio.pause();audio=null;$('#voice').classList.remove('playing');return}audio=new Audio(src);audio.play();$('#voice').classList.add('playing');audio.onended=()=>{$('#voice').classList.remove('playing');audio=null}};
 document.addEventListener('keydown',e=>{
+  if(e.target.isContentEditable||e.target.closest('input,textarea'))return;
+  if(e.code==='KeyF'||e.key.toLowerCase()==='f'){e.preventDefault();document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();return}
   if(e.key==='ArrowRight')show(current+(lang==='he'?-1:1));
   if(e.key==='ArrowLeft')show(current+(lang==='he'?1:-1));
   if(e.key==='Escape')$('#overview').classList.remove('on');
