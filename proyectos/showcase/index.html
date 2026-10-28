@@ -44,7 +44,9 @@
 const P = [
   { student:"Shmuel Wolf", he:"שמואל וולף", project:"Car @ Info", url:"../car-at-info/" },
   { student:"Yuval Sorek", he:"יובל שורק", project:"SmartChef — scan your kitchen, cook tonight", url:"../smartchef/" },
-  { student:"Roi Phillips", he:"רועי פיליפס", project:"SaveUp — Your Savings Goal", url:"../saveup/" }
+  { student:"Ori Ruzitsky", he:"אורי רוזיצקי", project:"BookLab — photo of a page → quiz", url:"https://page-to-picture-quiz.lovable.app" },
+  { student:"Roi Phillips", he:"רועי פיליפס", project:"SaveUp — Your Savings Goal", url:"../saveup/" },
+  { student:"Zohar's group", he:"הקבוצה של זוהר", project:"Smart alarm clock with a pressure pad", url:"" }
 ];
 const box = document.getElementById("slides"), toc = document.getElementById("toc");
 P.forEach((p, i) => {
@@ -52,8 +54,9 @@ P.forEach((p, i) => {
   box.insertAdjacentHTML("beforeend", `<section class="slide">
     <div class="head"><div><div class="kicker">PROJECT ${i + 1} / ${P.length}</div>
     <h1>${p.student} <span class="he" style="color:var(--muted);font-size:3.6vh">${p.he}</span></h1>
-    <h2>${p.project}</h2></div><a class="open" href="${p.url}" target="_blank">Open full screen ↗</a></div>
-    <div class="frame"><iframe data-src="${p.url}" allow="autoplay; fullscreen; camera; microphone"></iframe></div></section>`);
+    <h2>${p.project}</h2></div>${p.url ? `<a class="open" href="${p.url}" target="_blank">Open full screen ↗</a>` : ""}</div>
+    ${p.url ? `<div class="frame"><iframe data-src="${p.url}" allow="autoplay; fullscreen; camera; microphone"></iframe></div>`
+            : `<div class="frame" style="display:flex;align-items:center;justify-content:center;background:#13224a;color:var(--ink);font-size:4vh;text-align:center;padding:4vh">⏰ Live presentation<br><span style="font-size:2.6vh;color:var(--muted)">The problem · who has it · what we found when we asked others</span></div>`}</section>`);
 });
 const S = [...document.querySelectorAll(".slide")];
 let cur = 0;
