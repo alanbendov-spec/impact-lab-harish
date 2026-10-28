@@ -9,7 +9,7 @@ const tfcard=(emoji,head,answer)=>`<button class="card tf-card" type="button" da
 const step=(n,copy)=>`<div class="step"><b>${n}</b><span>${copy}</span></div>`;
 
 function tracks(stem){return `<track kind="captions" srclang="en" label="English" src="captions/${stem}.en.vtt"><track kind="captions" srclang="es" label="Español" src="captions/${stem}.es.vtt"><track kind="captions" srclang="ru" label="Русский" src="captions/${stem}.ru.vtt"><track kind="captions" srclang="pt" label="Português" src="captions/${stem}.pt.vtt">`}
-function video(src,stem,side){return `<div class="video-layout"><div class="video-box"><video controls preload="metadata" playsinline src="videos/${src}">${tracks(stem)}</video></div><aside class="video-side">${side}<div class="caption-hint">CC · English / Español / Русский</div></aside></div>`}
+function video(src,stem,side){return `<div class="video-layout"><div class="video-box"><video controls preload="metadata" playsinline src="videos/${src}">${tracks(stem)}</video></div><aside class="video-side">${side}<div class="caption-hint">CC · English / Español / Русский / Português</div></aside></div>`}
 function quiz(id,q,answers,correct,feedback){return `<div class="grid2"><div>${q}</div><div class="quizbox" data-quiz="${id}" data-correct="${correct}">${answers.map((a,i)=>`<button class="answer" data-answer="${i}"><b>${String.fromCharCode(65+i)}</b> · ${a}</button>`).join('')}<div class="quiz-feedback">${feedback}</div></div></div>`}
 
 const slides=[
