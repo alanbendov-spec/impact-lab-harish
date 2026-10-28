@@ -1,405 +1,150 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impact Lab Olim Harish · אימפקט לאב חריש לעולים</title>
-  <meta name="description" content="סדנת הדגל ליצירה ובינה מלאכותית לנוער עולה (כיתות ז׳–י״ב) בחריש. 100% חינם במועדון מחוברים.">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="אימפקט לאב חריש לעולים · סדנת AI לנוער">
-  <meta property="og:description" content="יוצרים אפליקציות, משחקים וסרטונים עם כלי הבינה המלאכותית הכי חמים בעולם! 100% חינם.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/emblema-navy.png">
-
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta name="description" content="Impact Lab Olim — a free AI workshop for young olim in Harish.">
+  <title>Impact Lab Olim · Harish</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/icon-harish.png">
 </head>
 <body>
-
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#" class="brand">
-        <div class="brand-logos">
-          <img src="assets/emblema-navy.png" alt="מועדון מחוברים חריש">
-          <div class="sep"></div>
-          <img src="assets/logo-harish.png" alt="עיריית חריש">
-          <div class="sep"></div>
-          <img src="assets/logo-klita.png" alt="משרד העלייה והקליטה">
-        </div>
-        <div class="brand-text">
-          <span class="brand-title" data-i18n="brandTitle">אימפקט לאב חריש</span>
-          <span class="brand-sub" data-i18n="brandSub">סדנת AI לנוער עולה</span>
-        </div>
-      </a>
-
-      <!-- 4-Language Switcher -->
-      <nav class="lang-switcher" aria-label="Language Selector">
-        <button type="button" class="lang-btn active" data-lang="he">עברית</button>
-        <button type="button" class="lang-btn" data-lang="en">EN</button>
-        <button type="button" class="lang-btn" data-lang="ru">РУ</button>
-        <button type="button" class="lang-btn" data-lang="es">ES</button>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Impact Lab Olim">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Impact Lab <b>Olim</b></span>
+    </a>
+    <nav aria-label="Language">
+      <a href="?lang=en" data-lang="en">EN</a><a href="?lang=he" data-lang="he">עב</a>
+      <a href="?lang=ru" data-lang="ru">РУ</a><a href="?lang=es" data-lang="es">ES</a><a href="?lang=pt" data-lang="pt">PT</a>
+    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-badges">
-        <span class="badge badge-gold" data-i18n="badgeGrade">⚡ כיתות ז׳–י״ב</span>
-        <span class="badge badge-green" data-i18n="badgeFree">🎁 100% חינם</span>
-        <span class="badge badge-blue" data-i18n="badgeOlim">🌍 לנוער עולה בחריש</span>
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow" data-t="heroEyebrow">Free AI workshop · Grades 7–12 · Harish</p>
+        <h1 data-t="heroTitle">Make something only you could imagine.</h1>
+        <p class="hero-lede" data-t="heroLede">Apps, videos, music and games. Build with new friends. No tech experience needed.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#register" data-t="heroCta">Save my spot</a>
+          <a class="button ghost" href="#watch" data-t="heroWatch">Watch the teaser</a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt data-t="whenLabel">When</dt><dd data-t="whenValue">Sundays, 17:30 · from Nov 8</dd></div>
+          <div><dt data-t="whereLabel">Where</dt><dd data-t="whereValue">Mehubarim, Harish · address to be confirmed</dd></div>
+        </dl>
       </div>
-
-      <h1 class="hero-title" data-i18n="heroTitle">
-        יוצרים עם <span class="glow">בינה מלאכותית</span> בחריש
-      </h1>
-
-      <p class="hero-lead" data-i18n="heroLead">
-        רוצים לבנות אפליקציה, משחק, שיר או סרטון משלכם? סדנת הדגל לנוער עולה במועדון מחוברים. בונים עם הכלים הכי מתקדמים בעולם, פוגשים חברים ונהנים מכיבוד שווה!
-      </p>
-
-      <div class="hero-actions">
-        <a href="#register" class="btn btn-primary" data-i18n="ctaRegister">להרשמה מיידית בחינם 🚀</a>
-        <a href="#what-we-do" class="btn btn-secondary" data-i18n="ctaLearnMore">למידע נוסף 👇</a>
+      <div class="hero-visual" id="watch">
+        <video id="teaser" playsinline controls preload="metadata" poster="assets/video-poster.jpg">
+          <source src="assets/teaser-en.mp4" type="video/mp4">
+        </video>
+        <span class="frame-note" data-t="frameNote">Ideas in. Real things out.</span>
       </div>
+    </section>
 
-      <!-- VIDEO TEASER BOX -->
-      <div class="video-wrapper">
-        <div class="video-container">
-          <video controls playsinline preload="metadata" poster="assets/mordechai.png">
-            <source src="assets/teaser-16x9.mp4" type="video/mp4">
-            דפדפן זה אינו תומך בניגון וידאו.
-          </video>
-        </div>
-        <div class="video-caption">
-          <span data-i18n="videoCaption">🎬 צפו בטיזר: מה מחכה לכם בסדנה</span>
-        </div>
+    <section class="partner-strip" aria-label="Partners">
+      <p data-t="partnerTitle">A program by</p>
+      <div class="partner-logos">
+        <img src="assets/emblema-navy.png" alt="Mehubarim">
+        <img src="assets/logo-klita.png" alt="Ministry of Aliyah and Integration">
+        <img src="assets/logo-harish.png" alt="Harish Municipality">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHAT WE DO SECTION -->
-  <section id="what-we-do" class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" data-i18n="whatWeDoEyebrow">מה נעשה בסדנה?</div>
-        <h2 class="section-title" data-i18n="whatWeDoTitle">ארבעה עולמות של יצירה וטכנולוגיה</h2>
+    <section class="section shell" id="make">
+      <div class="section-heading">
+        <p class="eyebrow" data-t="makeEyebrow">What happens here</p>
+        <h2 data-t="makeTitle">Your world becomes the raw material.</h2>
+        <p data-t="makeIntro">Bring what you already care about. AI helps your team turn it into something you can show.</p>
       </div>
-
-      <div class="bento-grid">
-        <!-- Card 1 -->
-        <div class="card">
-          <div class="card-icon">🚀</div>
-          <h3 class="card-title" data-i18n="card1Title">בניית אפליקציות ומשחקים</h3>
-          <p class="card-desc" data-i18n="card1Desc">
-            נלמד להשתמש ב-ChatGPT, Claude ו-Lovable כדי להפוך רעיון לאפליקציה או משחק אינטראקטיבי אמיתי ברשת.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Lovable</span>
-            <span class="tag">Claude 3.7</span>
-            <span class="tag">ChatGPT</span>
-            <span class="tag">Web Apps</span>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-          <div class="card-icon">🎬</div>
-          <h3 class="card-title" data-i18n="card2Title">יצירת סרטונים ומוזיקה</h3>
-          <p class="card-desc" data-i18n="card2Desc">
-            מייצרים קליפים ויראליים, מוזיקה מקורית וגרפיקות תלת-ממדיות בעזרת כלי ה-Generative AI החדשים ביותר.
-          </p>
-          <div class="card-tags">
-            <span class="tag">Sora / Veo</span>
-            <span class="tag">Suno Music</span>
-            <span class="tag">Midjourney</span>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card">
-          <div class="card-icon">🍕</div>
-          <h3 class="card-title" data-i18n="card3Title">כיף, חברים וכיבוד שווה</h3>
-          <p class="card-desc" data-i18n="card3Desc">
-            בלי ציונים, בלי מבחנים ובלי שיעורי בית. אתגרים קבוצתיים, אווירה כיפית ופיצות וחטיפים בכל שבוע.
-          </p>
-          <div class="card-tags">
-            <span class="tag">גיימינג</span>
-            <span class="tag">עבודת צוות</span>
-            <span class="tag">פיצות ונשנושים</span>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card">
-          <div class="card-icon">🏙️</div>
-          <h3 class="card-title" data-i18n="card4Title">מיזמים לחריש וסיורי הייטק</h3>
-          <p class="card-desc" data-i18n="card4Desc">
-            מציגים פרויקטים ורעיונות להנהלת העירייה, ויוצאים בעתיד לסיורי השראה בחברות הייטק בתל אביב ובחיפה.
-          </p>
-          <div class="card-tags">
-            <span class="tag">עיריית חריש</span>
-            <span class="tag">סיורי הייטק</span>
-            <span class="tag">אימפקט אמיתי</span>
-          </div>
-        </div>
+      <ol class="make-list">
+        <li><span>01</span><div><h3 data-t="make1Title">Create</h3><p data-t="make1Body">A track, a short film, a game or an app.</p></div></li>
+        <li><span>02</span><div><h3 data-t="make2Title">Team up</h3><p data-t="make2Body">Meet people who speak your language — and people who do not yet.</p></div></li>
+        <li><span>03</span><div><h3 data-t="make3Title">Try things</h3><p data-t="make3Body">No grades. Test, laugh, change direction and keep building.</p></div></li>
+        <li><span>04</span><div><h3 data-t="make4Title">Help Harish</h3><p data-t="make4Body">Turn a real local idea into a project the city can use.</p></div></li>
+      </ol>
+      <div class="tools" aria-label="AI tools">
+        <p data-t="toolsTitle">We will work with tools from</p>
+        <div><img src="assets/logos/openai.svg" alt="OpenAI"><img src="assets/logos/anthropic.svg" alt="Anthropic"><img src="assets/logos/google.svg" alt="Google"><img src="assets/logos/lovable.svg" alt="Lovable"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- LOGISTICS & WHEN / WHERE -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" data-i18n="logisticsEyebrow">פרטי הסדנה</div>
-        <h2 class="section-title" data-i18n="logisticsTitle">איפה ומתי נפגשים?</h2>
+    <section class="statement">
+      <div class="shell">
+        <p data-t="statementSmall">The only prerequisite</p>
+        <h2 data-t="statementTitle">You do not need to know technology.<br>Bring your ideas and your friends.</h2>
       </div>
+    </section>
 
-      <div class="logistics-grid">
-        <div class="log-card">
-          <div class="log-icon">📅</div>
-          <div class="log-label" data-i18n="logWhenLabel">מתי נפגשים</div>
-          <div class="log-value" data-i18n="logWhenVal">ימי ראשון 17:30</div>
-          <div class="log-sub" data-i18n="logWhenSub">משך: שעה עד שעה וחצי</div>
-        </div>
-
-        <div class="log-card">
-          <div class="log-icon">🚀</div>
-          <div class="log-label" data-i18n="logStartLabel">מפגש פתיחה</div>
-          <div class="log-value" data-i18n="logStartVal">8 בנובמבר 2026</div>
-          <div class="log-sub" data-i18n="logStartSub">אל תפספסו את ההתחלה!</div>
-        </div>
-
-        <div class="log-card">
-          <div class="log-icon">📍</div>
-          <div class="log-label" data-i18n="logWhereLabel">איפה</div>
-          <div class="log-value" data-i18n="logWhereVal">מועדון מחוברים חריש</div>
-          <div class="log-sub" data-i18n="logWhereSub">כתובת מדויקת תישלח לנרשמים</div>
-        </div>
-
-        <div class="log-card">
-          <div class="log-icon">✨</div>
-          <div class="log-label" data-i18n="logCostLabel">עלות</div>
-          <div class="log-value free" data-i18n="logCostVal">חינם לגמרי!</div>
-          <div class="log-sub" data-i18n="logCostSub">במימון משרד העלייה והקליטה ועיריית חריש</div>
-        </div>
+    <section class="section shell split">
+      <div class="schedule">
+        <p class="eyebrow" data-t="detailsEyebrow">The essentials</p>
+        <h2 data-t="detailsTitle">A weekly place to make things.</h2>
+        <dl>
+          <div><dt data-t="scheduleWhen">Schedule</dt><dd data-t="scheduleWhenV">Sundays at 17:30, starting November 8, 2026</dd></div>
+          <div><dt data-t="scheduleLength">Length</dt><dd data-t="scheduleLengthV">60–90 minutes</dd></div>
+          <div><dt data-t="scheduleWho">Who</dt><dd data-t="scheduleWhoV">Young olim in grades 7–12</dd></div>
+          <div><dt data-t="scheduleCost">Cost</dt><dd data-t="scheduleCostV">Free</dd></div>
+          <div><dt data-t="schedulePlace">Place</dt><dd data-t="schedulePlaceV">Moadon Mehubarim · [to be confirmed]</dd></div>
+        </dl>
       </div>
-    </div>
-  </section>
+      <article class="mentor">
+        <img src="assets/mordechai-whatsapp.jpg" alt="Mordechai Ben-Dov">
+        <div><p class="eyebrow" data-t="mentorEyebrow">Your workshop leader</p><h2>Mordechai Ben-Dov</h2>
+        <p data-t="mentorBody">A product builder and AI educator who has led technology projects across Israel and Latin America. His favorite part is helping a team go from “what if?” to “look what we made.”</p></div>
+      </article>
+    </section>
 
-  <!-- INSTRUCTOR SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" data-i18n="instructorEyebrow">מי מעביר את הסדנה?</div>
-        <h2 class="section-title" data-i18n="instructorTitle">נעים להכיר, מרדכי בנדוב</h2>
-      </div>
-
-      <div class="instructor-card">
-        <div class="instructor-img-wrap">
-          <img src="assets/mordechai.png" alt="Mordechai Bendov" class="instructor-img">
-          <span class="instructor-badge" data-i18n="instructorBadge">מנחה הסדנה</span>
-        </div>
-        <div class="instructor-details">
-          <h3>מרדכי (אלן) בנדוב</h3>
-          <div class="instructor-role" data-i18n="instructorRole">
-            מורה לאנגלית ואימפקט לאב בישיבה תיכונית חריש · יזם הייטק
-          </div>
-          <p class="instructor-bio" data-i18n="instructorBio">
-            מרדכי (אלן) בנדוב מלווה צעירים לפיתוח מיומנויות העתיד, חשיבה יזמית ושימוש מעשי בכלי AI מהמתקדמים בעולם. הסדנה מועברת באווירה פתוחה, בגובה העיניים, עם דגש על עשייה מעשית, חיבור חברתי וכיף גדול.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-eyebrow" data-i18n="faqEyebrow">שאלות ותשובות</div>
-        <h2 class="section-title" data-i18n="faqTitle">כל מה שחשוב לדעת</h2>
-      </div>
-
+    <section class="section faq shell">
+      <div class="section-heading"><p class="eyebrow">FAQ</p><h2 data-t="faqTitle">Good questions.</h2></div>
       <div class="faq-list">
-        <div class="faq-item open">
-          <button type="button" class="faq-question">
-            <span data-i18n="faq1Q">האם צריך ידע קודם בתכנות או במחשבים?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer" data-i18n="faq1A">
-            ממש לא! הסדנה בנויה כך שכל אחד ואחת יכולים להצליח, גם אם לא כתבתם שורת קוד בחיים. נלמד לעבוד עם כלי בינה מלאכותית שמייצרים קוד בשבילנו.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span data-i18n="faq2Q">לאילו גילאים הסדנה מתאימה?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer" data-i18n="faq2A">
-            הסדנה מיועדת לנוער עולה בכיתות ז׳ עד י״ב (גילאי 12 עד 18) תושבי חריש והסביבה.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span data-i18n="faq3Q">באילו שפות מתנהלת הסדנה?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer" data-i18n="faq3A">
-            הסדנה מונחית בעברית פשוטה וברורה, עם ליווי ותמיכה מלאה ברוסית, ספרדית ואנגלית לפי הצורך.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span data-i18n="faq4Q">האם צריך להביא מחשב נייד?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer" data-i18n="faq4A">
-            אם יש לכם מחשב נייד, מומלץ מאוד להביא אותו. אם אין, אל דאגה — היערכנו עם מחשבים ופתרונות עבודה בצוותים.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span data-i18n="faq5Q">האם ההשתתפות באמת בחינם?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer" data-i18n="faq5A">
-            כן, 100% חינם! התוכנית ממומנת במלואה ע"י משרד העלייה והקליטה, עיריית חריש ומועדון מחוברים.
-          </div>
-        </div>
+        <details><summary data-t="faq1q">Do I need to know coding?</summary><p data-t="faq1a">No. We start with ideas, not code. Everything is explained as we go.</p></details>
+        <details><summary data-t="faq2q">What language is the workshop in?</summary><p data-t="faq2a">English is the main language, with support in Hebrew, Russian, Spanish and Portuguese.</p></details>
+        <details><summary data-t="faq3q">Do I need a laptop?</summary><p data-t="faq3a">Bring one if you have it. Tell us in the form if you do not.</p></details>
+        <details><summary data-t="faq4q">Can I come with a friend?</summary><p data-t="faq4a">Please do. Each person should register separately.</p></details>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- REGISTRATION FORM SECTION -->
-  <section id="register" class="section">
-    <div class="container">
-      <div class="form-card">
-        <div class="form-header">
-          <h3 data-i18n="formTitle">טופס הרשמה לסדנה</h3>
-          <p data-i18n="formSubtitle">הבטיחו מקום מראש — מספר המשתתפים מוגבל!</p>
-        </div>
-
-        <form id="registrationForm">
-          <div class="form-grid">
-            <!-- First Name -->
-            <div class="form-group">
-              <label for="firstName" class="form-label">
-                <span data-i18n="labelFirstName">שם פרטי</span><span class="req">*</span>
-              </label>
-              <input type="text" id="firstName" name="firstName" required class="form-input">
-            </div>
-
-            <!-- Last Name -->
-            <div class="form-group">
-              <label for="lastName" class="form-label">
-                <span data-i18n="labelLastName">שם משפחה</span><span class="req">*</span>
-              </label>
-              <input type="text" id="lastName" name="lastName" required class="form-input">
-            </div>
-
-            <!-- Grade / Age -->
-            <div class="form-group">
-              <label for="grade" class="form-label">
-                <span data-i18n="labelGrade">כיתה / גיל</span><span class="req">*</span>
-              </label>
-              <select id="grade" name="grade" required class="form-select">
-                <option value="" disabled selected data-i18n="selectGradePlaceholder">בחרו כיתה...</option>
-                <option value="ז׳ (Gr. 7)">כיתה ז׳ (Gr. 7 / 7 класс)</option>
-                <option value="ח׳ (Gr. 8)">כיתה ח׳ (Gr. 8 / 8 класс)</option>
-                <option value="ט׳ (Gr. 9)">כיתה ט׳ (Gr. 9 / 9 класс)</option>
-                <option value="י׳ (Gr. 10)">כיתה י׳ (Gr. 10 / 10 класс)</option>
-                <option value="י״א (Gr. 11)">כיתה י״א (Gr. 11 / 11 класс)</option>
-                <option value="י״ב (Gr. 12)">כיתה י״ב (Gr. 12 / 12 класс)</option>
-              </select>
-            </div>
-
-            <!-- Languages -->
-            <div class="form-group">
-              <label for="languages" class="form-label">
-                <span data-i18n="labelLanguages">שפת אם ושפות דיבור</span><span class="req">*</span>
-              </label>
-              <input type="text" id="languages" name="languages" placeholder="עברית, רוסית, ספרדית, אנגלית..." required class="form-input">
-            </div>
-
-            <!-- Teen Phone -->
-            <div class="form-group">
-              <label for="teenPhone" class="form-label">
-                <span data-i18n="labelTeenPhone">טלפון נייד של הנער/ה</span><span class="req">*</span>
-              </label>
-              <input type="tel" id="teenPhone" name="teenPhone" placeholder="05X-XXXXXXX" required class="form-input" dir="ltr">
-            </div>
-
-            <!-- Parent Name -->
-            <div class="form-group">
-              <label for="parentName" class="form-label">
-                <span data-i18n="labelParentName">שם מלא של אחד ההורים</span><span class="req">*</span>
-              </label>
-              <input type="text" id="parentName" name="parentName" required class="form-input">
-            </div>
-
-            <!-- Parent Phone -->
-            <div class="form-group full">
-              <label for="parentPhone" class="form-label">
-                <span data-i18n="labelParentPhone">טלפון נייד של ההורה</span><span class="req">*</span>
-              </label>
-              <input type="tel" id="parentPhone" name="parentPhone" placeholder="05X-XXXXXXX" required class="form-input" dir="ltr">
-            </div>
-
-            <!-- Notes -->
-            <div class="form-group full">
-              <label for="notes" class="form-label">
-                <span data-i18n="labelNotes">הערות או בקשות מיוחדות</span>
-              </label>
-              <textarea id="notes" name="notes" class="form-textarea"></textarea>
-            </div>
-          </div>
-
-          <!-- Parental Consent -->
-          <div class="consent-box">
-            <input type="checkbox" id="parentConsent" name="parentConsent" required checked>
-            <label for="parentConsent" data-i18n="labelConsent">
-              אני מאשר/ת את השתתפות בני/בתי בסדנה וקבלת עדכונים בוואטסאפ
-            </label>
-          </div>
-
-          <button type="submit" id="submitBtn" class="btn btn-primary submit-btn">
-            <span data-i18n="btnSubmit">שליחת טופס הרשמה 🚀</span>
-          </button>
-
-          <!-- Status Message -->
-          <div id="formStatus" class="form-status" role="alert"></div>
-
-          <!-- Fallback Box -->
-          <div class="fallback-box">
-            <span data-i18n="fallbackNotice">מתקשים בטופס? אפשר להירשם ישירות גם אצל דבי במועדון מחוברים.</span>
-          </div>
+    <section class="register" id="register">
+      <div class="shell register-grid">
+        <div><p class="eyebrow" data-t="registerEyebrow">Registration</p><h2 data-t="registerTitle">Save your place.</h2>
+        <p data-t="registerIntro">This takes about one minute. The silly quiz comes only after you are registered.</p></div>
+        <form id="registrationForm" novalidate>
+          <div class="fields two"><label><span data-t="firstName">First name</span><input name="firstName" autocomplete="given-name" required></label>
+          <label><span data-t="lastName">Last name</span><input name="lastName" autocomplete="family-name" required></label></div>
+          <div class="fields two"><label><span data-t="ageGrade">Age / grade</span><input name="ageGrade" required></label>
+          <label><span data-t="languages">Language(s)</span><input name="languages" required></label></div>
+          <label><span data-t="teenPhone">Young person’s phone</span><input name="teenPhone" inputmode="tel" autocomplete="tel" required dir="ltr"></label>
+          <div class="fields two"><label><span data-t="parentName">Parent / guardian name</span><input name="parentName" required></label>
+          <label><span data-t="parentPhone">Parent / guardian phone</span><input name="parentPhone" inputmode="tel" required dir="ltr"></label></div>
+          <label class="check"><input type="checkbox" name="parentalConsent" required><span data-t="parentConsent">My parent/guardian authorizes my participation and the use of these details to coordinate the workshop.</span></label>
+          <input type="hidden" name="lang" id="formLang"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+          <button class="button primary wide" type="submit" data-t="submit">Register</button>
+          <p class="form-status" id="formStatus" role="status"></p>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logos">
-        <img src="assets/emblema-navy.png" alt="מועדון מחוברים">
-        <img src="assets/logo-harish.png" alt="עיריית חריש">
-        <img src="assets/logo-klita.png" alt="משרד העלייה והקליטה">
+    <section class="quiz" id="quiz" hidden>
+      <div class="shell quiz-shell">
+        <div id="quizIntro"><p class="eyebrow" data-t="quizEyebrow">You’re in. One last step.</p><h2 data-t="quizTitle">Take the completely scientific quiz.</h2>
+          <p data-t="quizConsent">With your permission, your name and final fun fact will appear to the group in the first class. Nothing about religion, origin or your body. You approve the exact line before it is saved.</p>
+          <button class="button primary" id="startQuiz" type="button" data-t="quizStart">I agree — start the quiz</button>
+          <button class="button ghost" id="skipQuiz" type="button" data-t="quizSkip">Skip the quiz</button></div>
+        <form id="quizForm" hidden><div id="quizQuestions"></div><button class="button primary" type="submit" data-t="quizReveal">Reveal my result</button></form>
+        <div id="quizResult" hidden><p class="eyebrow" data-t="quizConclusion">After your answers, we conclude that you…</p><h2 id="freakFact"></h2>
+          <div class="approval"><label><input type="radio" name="displayChoice" value="approve" checked><span data-t="approve">Approve this result</span></label>
+          <label><input type="radio" name="displayChoice" value="other"><span data-t="other">Use another result</span></label>
+          <label><input type="radio" name="displayChoice" value="no"><span data-t="noShow">Do not show my result</span></label></div>
+          <input id="otherFact" data-t-placeholder="otherPlaceholder" placeholder="Write your own fun fact" hidden>
+          <button class="button primary" id="saveQuiz" type="button" data-t="saveQuiz">Save my choice</button><p id="quizStatus" class="form-status"></p>
+        </div>
       </div>
-      <p class="footer-copy" data-i18n="footerCopy">
-        אימפקט לאב חריש לעולים · מועדון מחוברים · עיריית חריש · משרד העלייה והקליטה
-      </p>
-    </div>
-  </footer>
+    </section>
+  </main>
 
-  <script src="app.js"></script>
+  <footer><div class="shell"><div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Impact Lab <b>Olim</b></span></div><p data-t="footer">Moadon Mehubarim · Harish Municipality · Ministry of Aliyah and Integration</p></div></footer>
+  <script src="app.js" defer></script>
 </body>
 </html>
