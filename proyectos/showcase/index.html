@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impact Lab · Student Projects</title>
+<style>
+  @font-face { font-family: Rubik; src: url(../../Rubik-Variable.woff2) format("woff2"); }
+  @font-face { font-family: RubikHe; src: url(../../Rubik-Hebrew-Variable.woff2) format("woff2"); }
+  :root { --bg:#0b1630; --ink:#f4f6fb; --muted:#9fb0d0; --accent:#f5b83d; }
+  * { box-sizing:border-box; margin:0; }
+  html,body { height:100%; background:var(--bg); color:var(--ink); font-family:Rubik,RubikHe,system-ui,sans-serif; overflow:hidden; }
+  .slide { position:absolute; inset:0; display:none; flex-direction:column; padding:2.2vh 2.5vw; gap:1.6vh; }
+  .slide.on { display:flex; }
+  .head { display:flex; align-items:baseline; justify-content:space-between; gap:2vw; }
+  .kicker { color:var(--accent); font-weight:700; letter-spacing:.15em; font-size:1.6vh; }
+  h1 { font-size:5.4vh; font-weight:800; line-height:1.05; }
+  h2 { font-size:3vh; font-weight:500; color:var(--muted); }
+  .he { font-family:RubikHe,Rubik,sans-serif; direction:rtl; }
+  .frame { flex:1; border-radius:14px; overflow:hidden; background:#fff; box-shadow:0 10px 40px rgba(0,0,0,.4); }
+  .frame iframe { width:100%; height:100%; border:0; }
+  .cover { justify-content:center; align-items:center; text-align:center; gap:3vh; }
+  .cover h1 { font-size:9vh; }
+  .cover ol { list-style:none; padding:0; font-size:3.4vh; line-height:1.7; }
+  .cover ol b { color:var(--accent); }
+  .open { color:var(--accent); font-size:1.8vh; text-decoration:none; white-space:nowrap; }
+  nav { position:fixed; right:1.2vw; bottom:1.2vh; display:flex; gap:.6vw; z-index:5; opacity:.55; }
+  nav:hover { opacity:1; }
+  nav button { background:#1d2c52; color:var(--ink); border:0; border-radius:8px; padding:.8vh 1.2vw; font-size:2vh; cursor:pointer; }
+  .count { position:fixed; left:1.2vw; bottom:1.4vh; color:var(--muted); font-size:1.6vh; }
+</style>
+</head>
+<body>
+<section class="slide cover on">
+  <div class="kicker">IMPACT LAB · YESHIVAT BNEI AKIVA HARISH</div>
+  <h1>Student Projects</h1>
+  <h2 class="he">כל אחד מציג את הפרויקט שלו</h2>
+  <ol id="toc"></ol>
+</section>
+<div id="slides"></div>
+<nav><button onclick="go(-1)">‹</button><button onclick="go(1)">›</button><button onclick="fs()">⛶</button></nav>
+<div class="count" id="count"></div>
+<script>
+const P = [
+  { student:"Shmuel Wolf", he:"שמואל וולף", project:"Car @ Info", url:"../car-at-info/" },
+  { student:"Yuval Sorek", he:"יובל שורק", project:"SmartChef — scan your kitchen, cook tonight", url:"../smartchef/" },
+  { student:"Roi Phillips", he:"רועי פיליפס", project:"SaveUp — Your Savings Goal", url:"../saveup/" }
+];
+const box = document.getElementById("slides"), toc = document.getElementById("toc");
+P.forEach((p, i) => {
+  toc.insertAdjacentHTML("beforeend", `<li><b>${i + 1}.</b> ${p.student} — ${p.project.split(" — ")[0]}</li>`);
+  box.insertAdjacentHTML("beforeend", `<section class="slide">
+    <div class="head"><div><div class="kicker">PROJECT ${i + 1} / ${P.length}</div>
+    <h1>${p.student} <span class="he" style="color:var(--muted);font-size:3.6vh">${p.he}</span></h1>
+    <h2>${p.project}</h2></div><a class="open" href="${p.url}" target="_blank">Open full screen ↗</a></div>
+    <div class="frame"><iframe data-src="${p.url}" allow="autoplay; fullscreen; camera; microphone"></iframe></div></section>`);
+});
+const S = [...document.querySelectorAll(".slide")];
+let cur = 0;
+function show(n) {
+  cur = Math.max(0, Math.min(S.length - 1, n));
+  S.forEach((s, i) => s.classList.toggle("on", i === cur));
+  const f = S[cur].querySelector("iframe[data-src]");
+  if (f && !f.src) f.src = f.dataset.src;
+  document.getElementById("count").textContent = `${cur + 1} / ${S.length}`;
+}
+function go(d) { show(cur + d); }
+function fs() { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen(); }
+addEventListener("keydown", e => {
+  if (["ArrowRight", "PageDown"].includes(e.key)) go(1);
+  if (["ArrowLeft", "PageUp"].includes(e.key)) go(-1);
+  if (e.key === "f") fs();
+});
+show(0);
+</script>
+</body>
+</html>

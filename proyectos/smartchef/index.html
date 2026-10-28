@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1B1226"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<title>SmartChef</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1B1226;--card:#2A1E3A;--line:#3b2d52;--ink:#F3EEF8;--muted:#b8aecb;--acc:#F2A71B;--good:#3FB37F;--bad:#E4604C;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"],:root:not([data-theme="light"]){--bg:#1B1226}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Instrument Sans",system-ui,sans-serif;overflow:hidden}
+#app{height:100%;max-width:520px;margin:0 auto;display:flex;flex-direction:column;position:relative}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;margin:0;line-height:1.1}
+header{display:flex;align-items:center;gap:10px;padding:12px 18px 6px}
+header h1{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;flex:1}
+.lens{width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#6b5a85,#120a1c 70%);box-shadow:0 0 0 3px var(--acc)}
+.ghost{background:none;border:1px solid var(--line);color:var(--muted);border-radius:20px;padding:5px 12px;font:500 .8rem inherit;font-family:inherit;cursor:pointer}
+main{flex:1;overflow:auto;padding:8px 18px 18px;-webkit-overflow-scrolling:touch}
+main h2{font-size:1.6rem;font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:.9rem;margin:2px 0 14px}
+.row{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:16px;padding:11px 13px;margin-bottom:8px}
+.row[data-a]{cursor:pointer}
+.row .e{font-size:26px;width:32px;text-align:center}
+.row .m{flex:1;min-width:0}.row .m b{font-weight:600;display:block}
+.bar{height:5px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--good)}.bar i.lo{background:var(--bad)}
+.chip{font-size:.78rem;border-radius:20px;padding:3px 10px;background:var(--line);color:#d8cfe8;white-space:nowrap}
+.chip.g{background:rgba(63,179,127,.2);color:#7fe3b4}.chip.r{background:rgba(228,96,76,.22);color:#ff9d8e}.chip.a{background:rgba(242,167,27,.2);color:var(--acc)}
+.banner{background:rgba(242,167,27,.14);border:1px solid rgba(242,167,27,.4);border-radius:14px;padding:10px 12px;margin-bottom:12px;font-size:.88rem}
+.empty{text-align:center;color:var(--muted);padding:56px 16px}.empty .big{font-size:52px}
+.btn{width:100%;border:0;border-radius:16px;padding:15px;font:700 1rem "Instrument Sans",sans-serif;cursor:pointer;background:var(--acc);color:#2b1c00;margin-top:8px}
+.btn.alt{background:var(--line);color:var(--ink)}
+.back{background:none;border:0;color:var(--acc);font:600 .95rem "Instrument Sans",sans-serif;padding:4px 0 10px;cursor:pointer}
+.dn{display:flex;align-items:center;gap:14px;margin:4px 0 14px}
+.dn button{width:44px;height:44px;border-radius:50%;border:0;background:var(--line);color:#fff;font-size:22px;cursor:pointer}
+.dn b{font-size:1.2rem;min-width:70px;text-align:center}
+.big-step{background:var(--card);border-radius:20px;padding:22px;font-size:1.3rem;line-height:1.45;margin:16px 0;min-height:200px}
+.big-step b{color:var(--acc)}
+.prog{display:flex;gap:5px}.prog i{flex:1;height:5px;border-radius:3px;background:var(--line)}.prog i.on{background:var(--acc)}
+.pair{display:flex;gap:10px}
+.dock{display:flex;align-items:center;gap:12px;padding:10px 16px;border-top:1px solid var(--line);background:#150d1e}
+.sw{flex:1;display:flex;background:var(--card);border-radius:30px;padding:4px}
+.sw button{flex:1;border:0;background:none;border-radius:26px;padding:10px 4px;font:600 .85rem "Instrument Sans",sans-serif;color:var(--muted);cursor:pointer}
+.sw button.on{background:var(--ink);color:#241733}
+.trig{width:68px;height:68px;border-radius:50%;border:0;background:var(--acc);color:#2b1c00;font:800 .9rem "Bricolage Grotesque",sans-serif;box-shadow:0 5px 0 #b97c0a;cursor:pointer}
+.trig:active{transform:translateY(3px);box-shadow:0 2px 0 #b97c0a}
+.nav{display:flex;background:#150d1e}
+.nav button{flex:1;background:none;border:0;color:#9f93b6;padding:13px 0;font:600 .9rem "Instrument Sans",sans-serif;cursor:pointer}
+.nav button.on{color:var(--acc);box-shadow:inset 0 2px 0 var(--acc)}
+.scan{position:absolute;inset:0;background:rgba(10,5,16,.9);display:grid;place-items:center;text-align:center;z-index:5}
+.frame{position:absolute;inset:18% 12%;border:2px solid var(--acc);border-radius:24px;overflow:hidden}
+.frame:after{content:"";position:absolute;left:0;right:0;height:60px;background:linear-gradient(transparent,rgba(242,167,27,.55),transparent);animation:sw 1.2s ease-in-out infinite alternate}
+@keyframes sw{from{top:-50px}to{top:100%}}
+.toast{position:absolute;left:16px;right:16px;bottom:calc(150px + env(safe-area-inset-bottom,0px));background:var(--ink);color:#241733;border-radius:14px;padding:11px 14px;font-size:.9rem;z-index:6;font-weight:500}
+button:focus-visible,[data-a]:focus-visible{outline:3px solid #7fc4ff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.frame:after{animation:none}}
+</style></head><body>
+<div id="app"><header><i class="lens"></i><h1>SmartChef</h1><button class="ghost" id="rst">Reset</button></header>
+<main id="main"></main><div id="dock"></div><div id="nav"></div><div id="ovl"></div></div>
+<script>
+const $=s=>document.querySelector(s);
+const I={eggs:["Eggs","🥚","pcs",12],tomato:["Tomatoes","🍅","pcs",6],onion:["Onions","🧅","pcs",3],garlic:["Garlic","🧄","cloves",10],spinach:["Spinach","🥬","g",200],parmesan:["Parmesan","🧀","g",150],pasta:["Pasta","🍝","g",500],rice:["Rice","🍚","g",1000],oil:["Olive oil","🫒","ml",500],soy:["Soy sauce","🥢","ml",200],chicken:["Chicken breast","🍗","g",600],pepper:["Bell peppers","🫑","pcs",3],lemon:["Lemons","🍋","pcs",3],basil:["Basil","🌿","g",30],cream:["Cream","🥛","ml",250],butter:["Butter","🧈","g",250]};
+const R=[
+{id:"bake",n:"Tomato and spinach baked eggs",e:"🍳",t:20,i:{eggs:4,tomato:3,onion:1,garlic:2,spinach:80,oil:20},s:["Soften [onion] and [garlic] in [oil] for 4 minutes.","Add chopped [tomato] and cook 6 minutes until saucy.","Stir in [spinach], make wells and crack in [eggs].","Cover and cook 5 minutes until the whites set."]},
+{id:"gar",n:"Garlic parmesan pasta",e:"🍝",t:15,i:{pasta:200,garlic:3,oil:30,parmesan:40,basil:10},s:["Boil [pasta] in salted water until al dente.","Warm [oil] and [garlic] gently for 2 minutes.","Toss the drained pasta in the pan with a splash of pasta water.","Finish with [parmesan] and torn [basil]."]},
+{id:"lem",n:"Lemon chicken rice bowl",e:"🍗",t:30,i:{chicken:300,rice:160,lemon:1,garlic:2,pepper:1,soy:20},s:["Cook [rice] in twice its volume of water for 12 minutes.","Sear sliced [chicken] with [garlic] for 6 minutes.","Add sliced [pepper], [soy] and the juice of [lemon]. Cook 3 minutes.","Serve over the rice."]},
+{id:"cr",n:"Creamy tomato pasta",e:"🍅",t:25,i:{pasta:200,tomato:4,cream:100,onion:1,parmesan:30},s:["Boil [pasta] until al dente.","Cook diced [onion] and [tomato] for 8 minutes.","Stir in [cream] and simmer 3 minutes.","Combine with the pasta and top with [parmesan]."]},
+{id:"fr",n:"Veggie egg fried rice",e:"🍚",t:15,i:{rice:200,eggs:3,soy:20,onion:1,pepper:1,spinach:40},s:["Stir-fry diced [onion] and [pepper] on high heat for 3 minutes.","Push aside, scramble [eggs], then add [rice].","Toss with [soy] for 3 minutes.","Fold in [spinach] until just wilted."]}];
+const B={shelf:{l:"Pantry shelf",x:{pasta:500,rice:1000,oil:450,soy:200,garlic:8,onion:3}},fridge:{l:"Fridge",x:{eggs:6,tomato:4,spinach:150,parmesan:100,pepper:2}},receipt:{l:"Receipt from Greenfield Market",x:{chicken:400,lemon:2,basil:20,butter:250,tomato:2}}};
+const KEY="smartchef-v1";
+let S={tab:"pantry",stock:{},list:{},diners:2,mode:"shelf",sel:null,step:null,scanned:{},last:null,toast:"",busy:false};
+try{const v=JSON.parse(localStorage.getItem(KEY)||"null");if(v)Object.assign(S,v,{busy:false,toast:"",step:null})}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({stock:S.stock,list:S.list,diners:S.diners,scanned:S.scanned,mode:S.mode,last:S.last}))}catch(e){}};
+const rq=(id,q)=>{const u=I[id][2];return u=="g"||u=="ml"?Math.max(5,Math.round(q/5)*5):Math.max(1,Math.round(q))};
+const need=(r,id)=>rq(id,r.i[id]*S.diners/2);
+const fq=(id,q)=>q+(I[id][2]=="pcs"?"":" "+I[id][2])+" "+I[id][0].toLowerCase();
+const miss=r=>Object.keys(r.i).filter(id=>(S.stock[id]||0)<need(r,id));
+const cur=()=>R.find(x=>x.id==S.sel);
+function body(){let h="";
+ if(S.tab=="pantry"){const ids=Object.keys(S.stock);
+  h=`<h2>Your pantry</h2><p class="sub">${ids.length} items tracked automatically</p>`;
+  if(S.last)h+=`<div class="banner"><b>${S.last.l}:</b> ${Object.entries(S.last.x).map(([id,q])=>I[id][1]+" +"+q).join("  ")}</div>`;
+  if(!ids.length)h+=`<div class="empty"><div class="big">📷</div><p>Choose Shelf, Fridge or Receipt below, then press Scan.</p></div>`;
+  h+=ids.map(id=>{const [n,e,u,p]=I[id],q=S.stock[id],lo=q<=p*.25;return `<div class="row"><span class="e">${e}</span><div class="m"><b>${n}</b><div class="bar"><i class="${lo?"lo":""}" style="width:${Math.min(100,q/p*100)}%"></i></div></div><span class="chip ${lo?"r":""}">${lo?"Low · ":""}${q}${u=="pcs"?"":" "+u}</span></div>`}).join("")}
+ else if(S.tab=="recipes"&&S.sel===null){
+  h=`<h2>Cook tonight</h2><div class="dn"><span>Diners</span><button data-a="d" data-v="-1" aria-label="Fewer diners">−</button><b>${S.diners}</b><button data-a="d" data-v="1" aria-label="More diners">+</button></div>`;
+  if(!Object.keys(S.stock).length)h+=`<div class="empty"><div class="big">🥘</div><p>Scan your kitchen first so SmartChef knows what you have.</p></div>`;
+  else h+=[...R].sort((a,b)=>miss(a).length-miss(b).length).map(r=>{const m=miss(r).length;return `<div class="row" data-a="open" data-v="${r.id}" role="button" tabindex="0"><span class="e">${r.e}</span><div class="m"><b>${r.n}</b><span class="sub" style="margin:0">${r.t} min</span></div><span class="chip ${m?"a":"g"}">${m?m+" missing":"Ready"}</span></div>`}).join("")}
+ else if(S.tab=="recipes"){const r=cur(),m=miss(r);
+  h=`<button class="back" data-a="close">‹ All recipes</button><h2>${r.e} ${r.n}</h2><p class="sub">${r.t} minutes</p><div class="dn"><span>Diners</span><button data-a="d" data-v="-1" aria-label="Fewer diners">−</button><b>${S.diners}</b><button data-a="d" data-v="1" aria-label="More diners">+</button></div>`;
+  h+=Object.keys(r.i).map(id=>{const n=need(r,id),ok=(S.stock[id]||0)>=n;return `<div class="row"><span class="e">${I[id][1]}</span><div class="m"><b>${fq(id,n)}</b></div><span class="chip ${ok?"g":"r"}">${ok?"In stock":"Have "+(S.stock[id]||0)}</span></div>`}).join("");
+  if(m.length)h+=`<button class="btn alt" data-a="addm">Add ${m.length} missing to list</button>`;
+  h+=`<button class="btn" data-a="cook">${m.length?"Cook anyway":"Start cooking"}</button>`}
+ else{const ids=Object.keys(S.list);
+  h=`<h2>Shopping list</h2><p class="sub">Built from missing ingredients and low stock</p>`;
+  if(!ids.length)h+=`<div class="empty"><div class="big">🛒</div><p>Nothing needed yet. Low items and missing ingredients land here.</p></div>`;
+  h+=ids.map(id=>`<div class="row"><span class="e">${I[id][1]}</span><div class="m"><b>${fq(id,S.list[id].q)}</b></div><span class="chip ${S.list[id].auto?"a":""}">${S.list[id].auto?"Low stock":"Missing"}</span><button class="ghost" data-a="rm" data-v="${id}" aria-label="Remove ${I[id][0]}">Done</button></div>`).join("")}
+ return h}
+function cook(){const r=cur();const st=r.s[S.step].replace(/\[(\w+)\]/g,(m,id)=>`<b>${fq(id,need(r,id))}</b>`);
+ return `<button class="back" data-a="stop">‹ Back to recipe</button><h2>${r.n}</h2><p class="sub">Step ${S.step+1} of ${r.s.length} · ${S.diners} diner${S.diners>1?"s":""}</p><div class="prog">${r.s.map((_,i)=>`<i class="${i<=S.step?"on":""}"></i>`).join("")}</div><div class="big-step">${st}</div><div class="pair">${S.step>0?`<button class="btn alt" data-a="prev">Previous</button>`:""}<button class="btn" data-a="next">${S.step==r.s.length-1?"Finish cooking":"Next step"}</button></div>`}
+function draw(){const c=S.step!==null;
+ const y=$("#main").scrollTop;$("#main").innerHTML=c?cook():body();$("#main").scrollTop=y;
+ $("#dock").innerHTML=c?"":`<div class="dock"><div class="sw" role="group" aria-label="Scan mode">${["shelf","fridge","receipt"].map(m=>`<button data-m="${m}" class="${S.mode==m?"on":""}">${m[0].toUpperCase()+m.slice(1)}</button>`).join("")}</div><button class="trig" data-a="scan" aria-label="Scan">Scan</button></div>`;
+ $("#nav").innerHTML=c?"":`<div class="nav">${[["pantry","Pantry"],["recipes","Recipes"],["list","List"+(Object.keys(S.list).length?" ("+Object.keys(S.list).length+")":"")]].map(([k,t])=>`<button data-a="tab" data-v="${k}" class="${S.tab==k?"on":""}">${t}</button>`).join("")}</div>`;
+ $("#ovl").innerHTML=(S.toast?`<div class="toast" role="status">${S.toast}</div>`:"")+(S.busy?`<div class="scan"><div class="frame"></div><div><h3>Scanning ${B[S.mode].l.toLowerCase()}…</h3><p class="sub">Recognizing items</p></div></div>`:"");save()}
+function say(t){S.toast=t;draw();clearTimeout(say.t);say.t=setTimeout(()=>{S.toast="";draw()},3200)}
+function scan(){if(S.busy)return;S.busy=true;draw();setTimeout(()=>{S.busy=false;const b=B[S.mode];S.tab="pantry";S.sel=null;
+ if(S.scanned[S.mode]){draw();return say("Nothing new found. Your pantry is up to date.")}
+ S.scanned[S.mode]=1;for(const id in b.x)S.stock[id]=(S.stock[id]||0)+b.x[id];
+ for(const id in S.list)if(S.stock[id]>I[id][3]*.25)delete S.list[id];
+ S.last=b;say(S.mode=="receipt"?"Receipt read. "+Object.keys(b.x).length+" items added, no typing.":Object.keys(b.x).length+" items recognized.")},1700)}
+document.addEventListener("click",e=>{const mb=e.target.closest("[data-m]");if(mb){S.mode=mb.dataset.m;return draw()}
+ const el=e.target.closest("[data-a]");if(!el)return;const a=el.dataset.a,v=el.dataset.v,r=S.sel?cur():null;
+ if(a=="scan")return scan();
+ if(a=="tab"){S.tab=v;if(v!="recipes")S.sel=null}
+ if(a=="open")S.sel=v;if(a=="close")S.sel=null;
+ if(a=="d")S.diners=Math.min(8,Math.max(1,S.diners+ +v));
+ if(a=="rm")delete S.list[v];
+ if(a=="addm"){miss(r).forEach(id=>{const s=need(r,id)-(S.stock[id]||0);S.list[id]={q:rq(id,s),auto:0}});draw();return say("Added to your list.")}
+ if(a=="cook")S.step=0;if(a=="stop")S.step=null;if(a=="prev")S.step--;
+ if(a=="next"){if(S.step<r.s.length-1)S.step++;else{
+  for(const id in r.i){S.stock[id]=Math.max(0,(S.stock[id]||0)-need(r,id));if(S.stock[id]<=I[id][3]*.25)S.list[id]={q:Math.round(I[id][3]*.8),auto:1}}
+  S.step=null;S.sel=null;S.tab="pantry";S.last=null;draw();return say("Enjoy! Pantry updated. Low items added to your list.")}}
+ draw()});
+document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.dataset&&e.target.dataset.a)e.target.click()});
+$("#rst").onclick=()=>{if(!confirm("Clear your pantry and list?"))return;S={tab:"pantry",stock:{},list:{},diners:2,mode:"shelf",sel:null,step:null,scanned:{},last:null,toast:"",busy:false};draw()};
+draw();
+</script></body></html>

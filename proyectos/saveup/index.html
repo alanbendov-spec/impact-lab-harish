@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SaveUp — Your Savings Goal</title>
+<style>
+:root{--bg:#0b1020;--panel:#141c31;--panel2:#1b2740;--text:#f4f7ff;--muted:#9ba9c4;--green:#63f2b0;--blue:#7ca7ff;--line:#2b3855}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:radial-gradient(circle at top right,#17284c 0,transparent 36%),var(--bg);color:var(--text);min-height:100vh}
+.wrap{width:min(1050px,92%);margin:auto;padding:28px 0 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:10px;font-size:1.35rem;font-weight:800;letter-spacing:-.5px}.logo{display:grid;place-items:center;background:var(--green);color:#092116;width:40px;height:40px;border-radius:13px;font-size:1.4rem}.pill{color:var(--green);border:1px solid #285c4b;border-radius:999px;padding:8px 12px;font-size:.82rem}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.card{background:linear-gradient(145deg,rgba(27,39,64,.96),rgba(18,26,45,.96));border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 14px 40px #0002}.eyebrow{color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:1.3px;font-weight:700}.big{font-size:clamp(2.5rem,7vw,4rem);font-weight:850;letter-spacing:-2px;margin:12px 0 4px}.big span{color:var(--green)}.sub{color:var(--muted);line-height:1.55}.progress{height:12px;background:#0a1122;border-radius:999px;overflow:hidden;margin:20px 0 10px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),#9dffd5);border-radius:999px;transition:width .25s}.progress-row{display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.stat{background:#0e172a;border-radius:15px;padding:14px}.stat label{display:block;color:var(--muted);font-size:.8rem;margin-bottom:6px}.stat strong{font-size:1.25rem}.side-title{font-size:1.15rem;margin:0 0 16px}.field{margin:13px 0}.field label{display:block;color:#c7d1e5;font-size:.87rem;margin-bottom:7px}.field input,.field select{width:100%;background:#0b1427;border:1px solid #34415d;border-radius:12px;padding:12px 13px;color:var(--text);font:inherit;outline:none}.field input:focus,.field select:focus{border-color:var(--green)}button{font:inherit;font-weight:750;border:0;border-radius:12px;padding:12px 15px;cursor:pointer;transition:transform .12s,opacity .12s}button:active{transform:scale(.98)}.primary{background:var(--green);color:#092116;width:100%;margin-top:7px}.secondary{background:#263553;color:var(--text)}.addrow{display:flex;gap:9px}.addrow input{min-width:0;flex:1}.addrow button{white-space:nowrap}.section{margin-top:22px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.section-head h2{font-size:1.15rem;margin:0}.transactions{display:grid;gap:9px}.transaction{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#101a2d;border:1px solid #25334e;border-radius:14px;padding:13px 15px}.transaction small{display:block;color:var(--muted);margin-top:3px}.amount{color:var(--green);font-weight:800;white-space:nowrap}.empty{color:var(--muted);text-align:center;padding:24px;border:1px dashed #35425d;border-radius:14px}.tip{display:flex;gap:12px;align-items:flex-start}.tip-icon{font-size:1.5rem}.tip p{margin:6px 0 0;color:var(--muted);line-height:1.5}.footer{text-align:center;color:#7786a4;font-size:.8rem;margin-top:24px}.notice{font-size:.82rem;color:var(--muted);margin-top:12px;line-height:1.5}
+@media(max-width:720px){.hero{grid-template-columns:1fr}.top{align-items:flex-start}.pill{font-size:.74rem}.card{padding:19px}.wrap{padding-top:20px}.big{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">↗</div> SaveUp</div>
+    <div class="pill">YOUR MONEY. YOUR GOAL.</div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="card">
+        <div class="eyebrow">Your savings</div>
+        <div class="big" id="savedAmount">$0<span>.00</span></div>
+        <div class="sub">Every small step gets you closer to what you want.</div>
+        <div class="progress"><div class="bar" id="progressBar"></div></div>
+        <div class="progress-row"><span id="progressText">0% completed</span><span id="remainingText">$0 left</span></div>
+        <div class="statgrid">
+          <div class="stat"><label>Goal amount</label><strong id="goalStat">$100</strong></div>
+          <div class="stat"><label>Daily saving target</label><strong id="dailyStat">$2</strong></div>
+          <div class="stat"><label>Player level</label><strong id="levelStat">Level 1</strong></div>
+          <div class="stat"><label>Levels earned</label><strong id="levelsStat">0</strong></div>
+        </div>
+        <div class="notice" id="levelProgress">Save ₪100 to earn your next level.</div>
+      </div>
+      <div class="card">
+        <h2 class="side-title">Set your goal</h2>
+        <div class="field"><label for="goalName">What are you saving for?</label><input id="goalName" maxlength="50" placeholder="e.g. New headphones"></div>
+        <div class="field"><label for="goalAmount">Goal amount ($)</label><input id="goalAmount" type="number" min="1" step="1" value="100"></div>
+        <div class="field"><label for="dailyTarget">Daily target ($)</label><input id="dailyTarget" type="number" min="1" step="1" value="2"></div>
+        <button class="primary" id="saveGoal">Save my goal</button>
+        <div class="notice">Your information is saved in this browser on this device. It is not an online account.</div>
+      </div>
+    </section>
+    <section class="section card">
+      <div class="section-head"><h2>Add to your savings</h2></div>
+      <form id="addForm" class="addrow">
+        <div class="field" style="margin:0;flex:1"><label for="deposit">Amount ($)</label><input id="deposit" type="number" min="1" step="0.01" placeholder="e.g. 25" required></div>
+        <button class="primary" style="width:auto;align-self:end" type="submit">+ Add money</button>
+      </form>
+      <div class="notice">Only record money you have actually set aside. This tracker does not move money between accounts. Levels use a demo rate of $1 = ₪3.70; you can change this rate in the code.</div>
+    </section>
+    <section class="section card">
+      <div class="section-head"><h2>Recent activity</h2><button class="secondary" id="reset" type="button">Reset demo</button></div>
+      <div class="transactions" id="transactions"><div class="empty">No savings added yet. Add your first amount above.</div></div>
+    </section>
+    <section class="section card tip">
+      <div class="tip-icon">✦</div><div><strong>SaveUp tip</strong><p>Choose a realistic target and save a little regularly. Before buying something, pause and ask yourself whether it helps your goal.</p></div>
+    </section>
+  </main>
+  <div class="footer">SaveUp • A simple personal savings tracker</div>
+</div>
+<script>
+const KEY='saveup_demo_v1';
+const defaults={name:'My savings goal',goal:100,daily:2,saved:0,ilsSaved:0,history:[]};
+let state;
+try{state={...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch{state={...defaults};}
+const $=id=>document.getElementById(id);
+const money=n=>'$'+Number(n||0).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2});\nconst shekels=n=>'₪'+Number(n||0).toLocaleString('en-IL',{maximumFractionDigits:2});
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch{}}
+function render(){
+  const saved=Math.max(0,Number(state.saved)||0),goal=Math.max(1,Number(state.goal)||1);\n  const ilsSaved=Math.max(0,Number(state.ilsSaved)||0),levels=Math.floor(ilsSaved/100),level=levels+1,remainder=ilsSaved%100;
+  const pct=Math.min(100,saved/goal*100);
+  $('savedAmount').innerHTML=money(saved).replace(/(\.\d{2})$/, '<span>$1</span>');
+  if(!$('savedAmount').innerHTML.includes('<span>')) $('savedAmount').innerHTML=money(saved);
+  $('progressBar').style.width=pct+'%';$('progressText').textContent=Math.floor(pct)+'% completed';
+  $('remainingText').textContent=money(Math.max(0,goal-saved))+' left';$('goalStat').textContent=money(goal);$('dailyStat').textContent=money(state.daily);\n  if($('levelStat')) $('levelStat').textContent='Level '+level;\n  if($('levelsStat')) $('levelsStat').textContent=String(levels);\n  if($('levelProgress')) $('levelProgress').textContent= shekels(100-remainder)+' more saved in shekels to reach Level '+(level+1)+'. Total counted: '+shekels(ilsSaved)+'.';
+  document.title='SaveUp — '+(state.name||'Your Savings Goal');
+  const list=$('transactions');list.innerHTML='';
+  if(!state.history.length){list.innerHTML='<div class="empty">No savings added yet. Add your first amount above.</div>';return;}
+  state.history.slice(0,8).forEach(item=>{
+    const el=document.createElement('div');el.className='transaction';
+    const left=document.createElement('div'),title=document.createElement('strong'),date=document.createElement('small'),amt=document.createElement('div');
+    title.textContent='Savings deposit';date.textContent=item.date;amt.className='amount';amt.textContent='+'+money(item.amount);
+    left.append(title,date);el.append(left,amt);list.append(el);
+  });
+}
+$('goalName').value=state.name;$('goalAmount').value=state.goal;$('dailyTarget').value=state.daily;
+$('saveGoal').addEventListener('click',()=>{
+  const goal=Number($('goalAmount').value),daily=Number($('dailyTarget').value),name=$('goalName').value.trim();
+  if(!Number.isFinite(goal)||goal<=0||!Number.isFinite(daily)||daily<=0){alert('Enter goal and daily target amounts greater than zero.');return;}
+  state.goal=goal;state.daily=daily;state.name=name||'My savings goal';persist();render();
+});
+$('addForm').addEventListener('submit',e=>{
+  e.preventDefault();const amount=Number($('deposit').value);
+  if(!Number.isFinite(amount)||amount<=0){alert('Enter an amount greater than zero.');return;}
+  state.saved=(Number(state.saved)||0)+amount;
+  state.history.unshift({amount,date:new Date().toLocaleString()});
+  persist();render();$('deposit').value='';
+});
+$('reset').addEventListener('click',()=>{
+  if(confirm('Clear your saved demo data and start again?')){state={...defaults,history:[]};persist();$('goalName').value=state.name;$('goalAmount').value=state.goal;$('dailyTarget').value=state.daily;render();}
+});
+render();
+</script>
+</body>
+</html>
