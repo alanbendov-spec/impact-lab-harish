@@ -1,5 +1,5 @@
 const CONFIG = {
-  GAS_URL: 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE',
+  GAS_URL: 'https://docs.google.com/forms/d/e/1FAIpQLSdcKHXAJjgkQx-lHmMcLKVDskYp-enBr-TqNnkJpJYNdqq8rA/formResponse',
   SHEET_ID: '1XvQp3mxhe4PLtzb2SzAi5TAIIrYS3u1qXKyeobF5tZQ'
 };
 
@@ -34,7 +34,7 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 function applyLanguage(){const q=new URLSearchParams(location.search).get('lang');lang=T[q]?q:'en';document.documentElement.lang=lang;document.documentElement.dir=lang==='he'?'rtl':'ltr';$('#formLang').value=lang;$$('[data-lang]').forEach(a=>a.classList.toggle('active',a.dataset.lang===lang));$$('[data-t]').forEach(el=>{const v=T[lang][el.dataset.t];if(v!=null)el.innerHTML=v});$$('[data-t-placeholder]').forEach(el=>el.placeholder=T[lang][el.dataset.tPlaceholder]||'');$('#teaser source').src=`assets/teaser-${lang==='he'?'he':lang}.mp4`;$('#teaser').load()}
 function makeId(){return `olim-${Date.now()}-${Math.random().toString(36).slice(2,8)}`}
 function payload(form){return Object.fromEntries(new FormData(form).entries())}
-async function post(data){const res=await fetch(CONFIG.GAS_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});if(!res.ok)throw new Error(String(res.status));return res.json()}
+const FORM_FIELDS={action:805300221,submissionId:1123644156,lang:1121135320,firstName:1546300449,lastName:164305350,ageGrade:949983370,languages:1022794987,teenPhone:878808191,parentName:960741731,parentPhone:1676483521,parentalConsent:978479741,source:318067407};async function post(data){const p=new URLSearchParams();const quiz={};for(const [k,v] of Object.entries(data)){if(FORM_FIELDS[k])p.append('entry.'+FORM_FIELDS[k],String(v));else if(k!=='sheetId')quiz[k]=v}if(Object.keys(quiz).length)p.append('entry.1896960294',JSON.stringify(quiz));await fetch(CONFIG.GAS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()});return {ok:true}}
 function showQuiz(){location.hash='quiz';$('#quiz').hidden=false;$('#quiz').scrollIntoView({behavior:'smooth'})}
 function renderQuiz(){const qs=QUIZ[lang];$('#quizQuestions').innerHTML=qs.map((q,i)=>`<fieldset class="question"><legend>${i+1}. ${q[0]}</legend><div class="choices">${q[1].map((a,j)=>`<label><input type="radio" name="q${i+1}" value="${j}" ${j===0?'required':''}><span>${a}</span></label>`).join('')}</div></fieldset>`).join('')}
 
