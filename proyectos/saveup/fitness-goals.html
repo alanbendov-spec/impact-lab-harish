@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SaveUp — Fitness Goals</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151d33;--line:#2b3654;--text:#f5f6ff;--muted:#aab4ce;--accent:#a78bfa}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#20264a,var(--bg) 55%);color:var(--text);font:16px/1.5 system-ui,Arial,sans-serif;padding:24px}
+main{max-width:1050px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+a,.button{display:inline-block;background:#262f4c;color:white;border:1px solid var(--line);padding:11px 16px;border-radius:12px;text-decoration:none;font-weight:700}
+h1{font-size:clamp(2.2rem,6vw,3.8rem);margin:16px 0 4px}.muted{color:var(--muted)}.summary{margin:18px 0;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.day{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:150px}.day h2{font-size:1.1rem;margin:0 0 10px}.day p{color:var(--muted)}
+button{cursor:pointer;background:var(--accent);border:0;color:#15112b;border-radius:12px;padding:10px 14px;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+<div class="top"><a href="./">← Back to SaveFit</a><span class="muted">SAVEUP • FITNESS PLANNER</span></div>
+<h1>Fitness Goals</h1>
+<p class="muted">Your fitness progress is one half of your SaveUp journey. Your financial goals and healthy habits work together.</p>
+<div class="summary" id="summary" aria-live="polite"></div>
+<div class="grid" id="weeklyPlan"></div>
+<p class="muted">Start comfortably, warm up, include rest days, and stop if you feel pain or unwell. This is general activity guidance, not medical advice.</p>
+</main>
+<script>
+const params=new URLSearchParams(location.search);
+const goal=params.get('goal')||'general';
+const level=params.get('level')||'beginner';
+const days=Math.min(5,Math.max(2,Number(params.get('days')||3)));
+const names={general:'Improve general fitness',endurance:'Build endurance',strength:'Build strength',mobility:'Improve flexibility and mobility',habit:'Build a regular activity habit'};
+const plans={
+general:['Brisk walk or easy cycling','Bodyweight strength basics','Mobility and relaxed stretching','Fun activity of your choice','Easy walk and balance practice'],
+endurance:['Comfortable walk or cycle intervals','Easy steady walk, cycle or swim','Active game or sport','Gentle interval activity','Relaxed outdoor walk'],
+strength:['Bodyweight squats and wall push-ups','Glute bridges and bird-dogs','Step-ups and incline push-ups','Core stability and balance','Full-body movement practice'],
+mobility:['Gentle full-body mobility','Easy yoga-inspired movement','Shoulder, hip and ankle mobility','Balance and controlled movement','Relaxed stretching session'],
+habit:['Walk and choose a fun activity','Short movement break routine','Dance, cycle or play a sport','Walk with a friend or family','Choose an activity you enjoy']
+};
+document.getElementById('summary').textContent=`Goal: ${names[goal]||names.general} • Current level: ${level} • ${days} activity days per week`;
+const activeDays=[0,2,4,6,1].slice(0,days);
+const dayNames=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const container=document.getElementById('weeklyPlan');
+dayNames.forEach((day,index)=>{
+ const card=document.createElement('section');card.className='day';
+ const heading=document.createElement('h2');heading.textContent=day;card.appendChild(heading);
+ const text=document.createElement('p');
+ if(activeDays.includes(index)){
+  const exercise=(plans[goal]||plans.general)[activeDays.indexOf(index)];
+  text.textContent=exercise;
+  const label=document.createElement('label');const check=document.createElement('input');
+  check.type='checkbox';check.addEventListener('change',()=>{
+   const key='savefit_done_'+location.search;
+   let done=[];try{done=JSON.parse(localStorage.getItem(key)||'[]')}catch(e){}
+   if(check.checked&&!done.includes(day))done.push(day);
+   if(!check.checked)done=done.filter(x=>x!==day);
+   try{localStorage.setItem(key,JSON.stringify(done))}catch(e){}
+   updateCount();
+  });
+  const key='savefit_done_'+location.search;
+  try{check.checked=JSON.parse(localStorage.getItem(key)||'[]').includes(day)}catch(e){}
+  label.append(check,document.createTextNode(' Mark complete'));card.append(text,label);
+ }else{text.textContent='Rest or gentle everyday movement';card.appendChild(text)}
+ container.appendChild(card);
+});
+function updateCount(){
+ const boxes=[...document.querySelectorAll('input[type=checkbox]')];
+ const completed=boxes.filter(x=>x.checked).length;
+ let status=document.getElementById('progress');
+ if(!status){status=document.createElement('p');status.id='progress';status.className='muted';container.before(status)}
+ status.textContent=`${completed} of ${boxes.length} planned workouts completed`;
+}
+updateCount();
+</script>
+</body>
+</html>
